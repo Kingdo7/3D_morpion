@@ -17,7 +17,7 @@ nav.infos .content h2 {
 }
 
 section.plateau {
-    width:60%;
+    width:100%;
 }
 
 header{
@@ -31,20 +31,27 @@ h1{
 }
 
 .grille {
-   width: 80%;
+   width: 100%;
    margin:1em auto;    
 }
 
 .ligne {
     display:flex;
-    width:100%;
+    width:30%;
 }
 
 .cellule {
-    width:33%;
+    width:80%;
     padding-top: 33%; /* 1:1 Aspect Ratio */
     border:1px solid black;
-    background-color:grey;
+    background-color:cornsilk;
+    position: relative;
+}
+.espace {
+    width:33%;
+    padding-top: 33%; /* 1:1 Aspect Ratio */
+    border:1px solid white;
+    background-color:white;
     position: relative;
 }
 
@@ -58,7 +65,7 @@ h1{
 
 .tour {   
     margin: 0 auto;
-    width: 200px;
+    width: 100px;
 }
 
 .tour .cross{
