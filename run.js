@@ -30,7 +30,7 @@ $('document').ready(function(e){
                 return Math.floor(Math.random() * Math.floor(max));
             }
             
-            /** Si le joueur a presque gagné, il y a 1/3 de chance que l'IA le bloque */
+            /** Si le joueur a presque gagné, il y a 1/3 de chance que l'IA le bloque 
             for(let i=0;i<9;i++){
                 switch (partie.grille){
                     case 'circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][1] :
@@ -207,19 +207,26 @@ $('document').ready(function(e){
                 if (def == 1) {
                         
                 } else {
-                    /*Instanciation chiffre al�atoire */
+                    /*Instanciation chiffre al�atoire *
                     let X = getRandomInt(3);
                     let Y = getRandomInt(9);
                 }
                 
-                /*V�rification que la cellule est vide avant de finalis� la position*/
+                /*V�rification que la cellule est vide avant de finalis� la position*
                 while (partie.grille[X][Y] != null) {
                     X = getRandomInt(3);
                     Y = getRandomInt(9);
                 }
+            }*/
+
+            /*Instanciation chiffre al�atoire */
+            let X = getRandomInt(9);
+            let Y = getRandomInt(3);
+            /*V�rification que la cellule est vide avant de finalis� la position*/
+            while (partie.grille[X][Y] != null) {
+                X = getRandomInt(9);
+                Y = getRandomInt(3);
             }
-
-
             /** Si l'IA a presque gagné, il y a 1/3 de chance que l'IA gagne */
             
     
@@ -398,73 +405,118 @@ $('document').ready(function(e){
                 }
 
                 /** Inter Plateau traverse */
-                if('circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][3] &&  'circle' == partie.grille[i][6]){  
-                    $('div#' + [i] + '_' + [0]).children(".forme.circle").css('display','none');
-                    $('div#' + [i] + '_' + [3]).children(".forme.circle").css('display','none');
-                    $('div#' + [i] + '_' + [6]).children(".forme.circle").css('display','none');
+                if('circle' == partie.grille[0][i] &&  'circle' == partie.grille[3][i] &&  'circle' == partie.grille[6][i]){  
+                    $('div#' + [0] + '_' + [i]).children(".forme.circle").css('display','none');
+                    $('div#' + [3] + '_' + [i]).children(".forme.circle").css('display','none');
+                    $('div#' + [6] + '_' + [i]).children(".forme.circle").css('display','none');
 
-                    $('div#' + [i] + '_' + [0]).children(".forme.circleV").css('display','block');
-                    $('div#' + [i] + '_' + [3]).children(".forme.circleV").css('display','block');
-                    $('div#' + [i] + '_' + [6]).children(".forme.circleV").css('display','block');
+                    $('div#' + [0] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    $('div#' + [3] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    $('div#' + [6] + '_' + [i]).children(".forme.circleV").css('display','block');
                     partie.joueur_gagnant = 'circle';
                     break;
                 }
 
-                if('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][3] &&  'cross' == partie.grille[i][6]){
-                    $('div#' + [i] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [3]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [6]).children(".forme.cross").css('display','none');
+                if('circle' == partie.grille[1][i] &&  'circle' == partie.grille[4][i] &&  'circle' == partie.grille[7][i]){  
+                    $('div#' + [1] + '_' + [i]).children(".forme.circle").css('display','none');
+                    $('div#' + [4] + '_' + [i]).children(".forme.circle").css('display','none');
+                    $('div#' + [7] + '_' + [i]).children(".forme.circle").css('display','none');
 
-                    $('div#' + [i] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [3]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [6]).children(".forme.crossV").css('display','block');
+                    $('div#' + [1] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    $('div#' + [4] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    $('div#' + [7] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    partie.joueur_gagnant = 'circle';
+                    break;
+                }
+
+                if('circle' == partie.grille[2][i] &&  'circle' == partie.grille[5][i] &&  'circle' == partie.grille[8][i]){  
+                    $('div#' + [2] + '_' + [i]).children(".forme.circle").css('display','none');
+                    $('div#' + [5] + '_' + [i]).children(".forme.circle").css('display','none');
+                    $('div#' + [8] + '_' + [i]).children(".forme.circle").css('display','none');
+
+                    $('div#' + [2] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    $('div#' + [5] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    $('div#' + [8] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    partie.joueur_gagnant = 'circle';
+                    break;
+                }
+
+                if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  'cross' == partie.grille[6][i]){  
+                    $('div#' + [0] + '_' + [i]).children(".forme.cross").css('display','none');
+                    $('div#' + [3] + '_' + [i]).children(".forme.cross").css('display','none');
+                    $('div#' + [6] + '_' + [i]).children(".forme.cross").css('display','none');
+
+                    $('div#' + [0] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    $('div#' + [3] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    $('div#' + [6] + '_' + [i]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                     break;
                 }
 
-                /** Inter Plateau lignes */
-                if('circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][4] &&  'circle' == partie.grille[i][8]){
-                    $('div#' + [i] + '_' + [0]).children(".forme.circle").css('display','none');
-                    $('div#' + [i] + '_' + [4]).children(".forme.circle").css('display','none');
-                    $('div#' + [i] + '_' + [8]).children(".forme.circle").css('display','none');
+                if('cross' == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[7][i]){  
+                    $('div#' + [1] + '_' + [i]).children(".forme.cross").css('display','none');
+                    $('div#' + [4] + '_' + [i]).children(".forme.cross").css('display','none');
+                    $('div#' + [7] + '_' + [i]).children(".forme.cross").css('display','none');
 
-                    $('div#' + [i] + '_' + [0]).children(".forme.circleV").css('display','block');
-                    $('div#' + [i] + '_' + [4]).children(".forme.circleV").css('display','block');
-                    $('div#' + [i] + '_' + [8]).children(".forme.circleV").css('display','block');
-                    partie.joueur_gagnant = 'circle';
+                    $('div#' + [1] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    $('div#' + [4] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    $('div#' + [7] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    partie.joueur_gagnant = 'cross';
+                    break;
                 }
 
-                if('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][4] &&  'cross' == partie.grille[i][8]){
+                if('cross' == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  'cross' == partie.grille[8][i]){  
+                    $('div#' + [2] + '_' + [i]).children(".forme.cross").css('display','none');
+                    $('div#' + [5] + '_' + [i]).children(".forme.cross").css('display','none');
+                    $('div#' + [8] + '_' + [i]).children(".forme.cross").css('display','none');
+
+                    $('div#' + [2] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    $('div#' + [5] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    $('div#' + [8] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    partie.joueur_gagnant = 'cross';
+                    break;
+                }
+                /** Inter Plateau lignes */
+                if('circle' == partie.grille[i][0] &&  'circle' == partie.grille[i+3][1] &&  'circle' == partie.grille[i+6][2]){
+                    $('div#' + [i] + '_' + [0]).children(".forme.circle").css('display','none');
+                    $('div#' + [i+3] + '_' + [1]).children(".forme.circle").css('display','none');
+                    $('div#' + [i+6] + '_' + [2]).children(".forme.circle").css('display','none');
+
+                    $('div#' + [i] + '_' + [0]).children(".forme.circleV").css('display','block');
+                    $('div#' + [i+3] + '_' + [1]).children(".forme.circleV").css('display','block');
+                    $('div#' + [i+6] + '_' + [2]).children(".forme.circleV").css('display','block');
+                    partie.joueur_gagnant = 'circle';
+                }
+                if('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2]){
                     $('div#' + [i] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [4]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [8]).children(".forme.cross").css('display','none');
+                    $('div#' + [i] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [i] + '_' + [2]).children(".forme.cross").css('display','none');
 
                     $('div#' + [i] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [4]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [8]).children(".forme.crossV").css('display','block');
+                    $('div#' + [i] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [i] + '_' + [2]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
 
                 /** Inter Plateau colones */
-                if('circle' == partie.grille[0][i] &&  'circle' == partie.grille[1][i+3] &&  'circle' == partie.grille[2][i+6]){
+                if('circle' == partie.grille[0][i] &&  'circle' == partie.grille[4][i] &&  'circle' == partie.grille[8][i]){
                     $('div#' + [0] + '_' + [i]).children(".forme.circle").css('display','none');
-                    $('div#' + [1] + '_' + [i+3]).children(".forme.circle").css('display','none');
-                    $('div#' + [2] + '_' + [i+6]).children(".forme.circle").css('display','none');
+                    $('div#' + [4] + '_' + [i]).children(".forme.circle").css('display','none');
+                    $('div#' + [8] + '_' + [i]).children(".forme.circle").css('display','none');
 
                     $('div#' + [0] + '_' + [i]).children(".forme.circleV").css('display','block');
-                    $('div#' + [1] + '_' + [i+3]).children(".forme.circleV").css('display','block');
-                    $('div#' + [2] + '_' + [i+6]).children(".forme.circleV").css('display','block');
+                    $('div#' + [4] + '_' + [i]).children(".forme.circleV").css('display','block');
+                    $('div#' + [8] + '_' + [i]).children(".forme.circleV").css('display','block');
                     partie.joueur_gagnant = 'circle';
                 }
-
-                if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[1][i+3] &&  'cross' == partie.grille[2][i+6]){
+                if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[8][i]){
                     $('div#' + [0] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [1] + '_' + [i+3]).children(".forme.cross").css('display','none');
-                    $('div#' + [2] + '_' + [i+6]).children(".forme.cross").css('display','none');
+                    $('div#' + [4] + '_' + [i]).children(".forme.cross").css('display','none');
+                    $('div#' + [8] + '_' + [i]).children(".forme.cross").css('display','none');
 
                     $('div#' + [0] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [1] + '_' + [i+3]).children(".forme.crossV").css('display','block');
-                    $('div#' + [2] + '_' + [i+6]).children(".forme.crossV").css('display','block');
+                    $('div#' + [4] + '_' + [i]).children(".forme.crossV").css('display','block');
+                    $('div#' + [8] + '_' + [i]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
 
@@ -515,138 +567,117 @@ $('document').ready(function(e){
                 partie.joueur_gagnant = 'cross';
             }
             /** Plateau 2  diagonales */
-            if('circle' == partie.grille[3][3] &&  'circle' == partie.grille[4][4] &&  'circle' == partie.grille[5][5]){
-                $('div#' + [3] + '_' + [3]).children(".forme.circle").css('display','none');
-                $('div#' + [4] + '_' + [4]).children(".forme.circle").css('display','none');
-                $('div#' + [5] + '_' + [5]).children(".forme.circle").css('display','none');
+            if('circle' == partie.grille[3][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[5][2]){
+                $('div#' + [3] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [5] + '_' + [2]).children(".forme.circle").css('display','none');
 
-                $('div#' + [3] + '_' + [3]).children(".forme.circleV").css('display','block');
-                $('div#' + [4] + '_' + [4]).children(".forme.circleV").css('display','block');
-                $('div#' + [5] + '_' + [5]).children(".forme.circleV").css('display','block');
+                $('div#' + [3] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [5] + '_' + [2]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
 
-            if('circle' == partie.grille[3][5] &&  'circle' == partie.grille[4][4] &&  'circle' == partie.grille[5][3]){
-                $('div#' + [3] + '_' + [5]).children(".forme.circle").css('display','none');
-                $('div#' + [4] + '_' + [4]).children(".forme.circle").css('display','none');
-                $('div#' + [5] + '_' + [3]).children(".forme.circle").css('display','none');
+            if('circle' == partie.grille[3][2] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[5][0]){
+                $('div#' + [3] + '_' + [2]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [5] + '_' + [0]).children(".forme.circle").css('display','none');
 
-                $('div#' + [3] + '_' + [5]).children(".forme.circleV").css('display','block');
-                $('div#' + [4] + '_' + [4]).children(".forme.circleV").css('display','block');
-                $('div#' + [5] + '_' + [3]).children(".forme.circleV").css('display','block');
+                $('div#' + [3] + '_' + [2]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [5] + '_' + [0]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
 
-            if('cross' == partie.grille[3][3] &&  'cross' == partie.grille[4][4] &&  'cross' == partie.grille[5][5]){
-                $('div#' + [3] + '_' + [3]).children(".forme.cross").css('display','none');
-                $('div#' + [4] + '_' + [4]).children(".forme.cross").css('display','none');
-                $('div#' + [5] + '_' + [5]).children(".forme.cross").css('display','none');
+            if('cross' == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][2]){
+                $('div#' + [3] + '_' + [0]).children(".forme.cross").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [5] + '_' + [2]).children(".forme.cross").css('display','none');
 
-                $('div#' + [3] + '_' + [3]).children(".forme.crossV").css('display','block');
-                $('div#' + [4] + '_' + [4]).children(".forme.crossV").css('display','block');
-                $('div#' + [5] + '_' + [5]).children(".forme.crossV").css('display','block');
+                $('div#' + [3] + '_' + [0]).children(".forme.crossV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [5] + '_' + [2]).children(".forme.crossV").css('display','block');
                 partie.joueur_gagnant = 'cross';
             }
 
-            if('cross' == partie.grille[3][5] &&  'cross' == partie.grille[4][4] &&  'cross' == partie.grille[5][3]){
-                $('div#' + [3] + '_' + [5]).children(".forme.cross").css('display','none');
-                $('div#' + [4] + '_' + [4]).children(".forme.cross").css('display','none');
-                $('div#' + [5] + '_' + [3]).children(".forme.cross").css('display','none');
+            if('cross' == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][0]){
+                $('div#' + [3] + '_' + [2]).children(".forme.cross").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [5] + '_' + [0]).children(".forme.cross").css('display','none');
 
-                $('div#' + [3] + '_' + [5]).children(".forme.crossV").css('display','block');
-                $('div#' + [4] + '_' + [4]).children(".forme.crossV").css('display','block');
-                $('div#' + [5] + '_' + [3]).children(".forme.crossV").css('display','block');
+                $('div#' + [3] + '_' + [2]).children(".forme.crossV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [5] + '_' + [0]).children(".forme.crossV").css('display','block');
                 partie.joueur_gagnant = 'cross';
             }
+
             /** Plateau 3 diagonales */
-            if('circle' == partie.grille[6][6] &&  'circle' == partie.grille[7][7] &&  'circle' == partie.grille[8][8]){
-                $('div#' + [6] + '_' + [6]).children(".forme.circle").css('display','none');
-                $('div#' + [7] + '_' + [7]).children(".forme.circle").css('display','none');
-                $('div#' + [8] + '_' + [8]).children(".forme.circle").css('display','none');
+            if('circle' == partie.grille[6][0] &&  'circle' == partie.grille[7][1] &&  'circle' == partie.grille[8][2]){
+                $('div#' + [6] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [7] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [2]).children(".forme.circle").css('display','none');
 
-                $('div#' + [6] + '_' + [6]).children(".forme.circleV").css('display','block');
-                $('div#' + [7] + '_' + [7]).children(".forme.circleV").css('display','block');
-                $('div#' + [8] + '_' + [8]).children(".forme.circleV").css('display','block');
+                $('div#' + [6] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [7] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
 
-            if('circle' == partie.grille[6][8] &&  'circle' == partie.grille[7][7] &&  'circle' == partie.grille[8][6]){
-                $('div#' + [6] + '_' + [8]).children(".forme.circle").css('display','none');
-                $('div#' + [7] + '_' + [7]).children(".forme.circle").css('display','none');
-                $('div#' + [8] + '_' + [6]).children(".forme.circle").css('display','none');
+            if('circle' == partie.grille[6][2] &&  'circle' == partie.grille[7][1] &&  'circle' == partie.grille[8][0]){
+                $('div#' + [6] + '_' + [2]).children(".forme.circle").css('display','none');
+                $('div#' + [7] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [0]).children(".forme.circle").css('display','none');
 
-                $('div#' + [6] + '_' + [8]).children(".forme.circleV").css('display','block');
-                $('div#' + [7] + '_' + [7]).children(".forme.circleV").css('display','block');
-                $('div#' + [8] + '_' + []).children(".forme.circleV").css('display','block');
+                $('div#' + [6] + '_' + [2]).children(".forme.circleV").css('display','block');
+                $('div#' + [7] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [0]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
 
-            if('cross' == partie.grille[6][6] &&  'cross' == partie.grille[7][7] &&  'cross' == partie.grille[8][8]){
-                $('div#' + [6] + '_' + [6]).children(".forme.cross").css('display','none');
-                $('div#' + [7] + '_' + [7]).children(".forme.cross").css('display','none');
-                $('div#' + [8] + '_' + [8]).children(".forme.cross").css('display','none');
+            if('cross' == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][2]){
+                $('div#' + [6] + '_' + [0]).children(".forme.cross").css('display','none');
+                $('div#' + [7] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [8] + '_' + [2]).children(".forme.cross").css('display','none');
 
-                $('div#' + [6] + '_' + [6]).children(".forme.crossV").css('display','block');
-                $('div#' + [7] + '_' + [7]).children(".forme.crossV").css('display','block');
-                $('div#' + [8] + '_' + [8]).children(".forme.crossV").css('display','block');
+                $('div#' + [6] + '_' + [0]).children(".forme.crossV").css('display','block');
+                $('div#' + [7] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [8] + '_' + [2]).children(".forme.crossV").css('display','block');
                 partie.joueur_gagnant = 'cross';
             }
 
-            if('cross' == partie.grille[6][8] &&  'cross' == partie.grille[7][7] &&  'cross' == partie.grille[8][6]){
-                $('div#' + [6] + '_' + [8]).children(".forme.cross").css('display','none');
-                $('div#' + [7] + '_' + [7]).children(".forme.cross").css('display','none');
-                $('div#' + [8] + '_' + [6]).children(".forme.cross").css('display','none');
+            if('cross' == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][0]){
+                $('div#' + [6] + '_' + [2]).children(".forme.cross").css('display','none');
+                $('div#' + [7] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [8] + '_' + [0]).children(".forme.cross").css('display','none');
 
-                $('div#' + [6] + '_' + [8]).children(".forme.crossV").css('display','block');
-                $('div#' + [7] + '_' + [7]).children(".forme.crossV").css('display','block');
-                $('div#' + [8] + '_' + [6]).children(".forme.crossV").css('display','block');
+                $('div#' + [6] + '_' + [2]).children(".forme.crossV").css('display','block');
+                $('div#' + [7] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [8] + '_' + [0]).children(".forme.crossV").css('display','block');
                 partie.joueur_gagnant = 'cross';
-            }     
+            }
 
             /** Inter Plateau diagonales */
-            if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[1][4] &&  'circle' == partie.grille[2][8]){
+            if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[8][2]){
                 $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
-                $('div#' + [1] + '_' + [4]).children(".forme.circle").css('display','none');
-                $('div#' + [2] + '_' + [8]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [2]).children(".forme.circle").css('display','none');
 
                 $('div#' + [0] + '_' + [0]).children(".forme.circleV").css('display','block');
-                $('div#' + [1] + '_' + [4]).children(".forme.circleV").css('display','block');
-                $('div#' + [2] + '_' + [8]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
 
-            if('circle' == partie.grille[0][2] &&  'circle' == partie.grille[1][4] &&  'circle' == partie.grille[2][6]){
+            if('circle' == partie.grille[0][2] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[8][0]){
                 $('div#' + [0] + '_' + [2]).children(".forme.circle").css('display','none');
-                $('div#' + [1] + '_' + [4]).children(".forme.circle").css('display','none');
-                $('div#' + [2] + '_' + [6]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [0]).children(".forme.circle").css('display','none');
 
                 $('div#' + [0] + '_' + [2]).children(".forme.circleV").css('display','block');
-                $('div#' + [1] + '_' + [4]).children(".forme.circleV").css('display','block');
-                $('div#' + [2] + '_' + [6]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [0]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
-
-            if('cross' == partie.grille[0][0] &&  'cross' == partie.grille[1][4] &&  'cross' == partie.grille[2][8]){
-                $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
-                $('div#' + [1] + '_' + [4]).children(".forme.cross").css('display','none');
-                $('div#' + [2] + '_' + [8]).children(".forme.cross").css('display','none');
-
-                $('div#' + [0] + '_' + [0]).children(".forme.crossV").css('display','block');
-                $('div#' + [1] + '_' + [4]).children(".forme.crossV").css('display','block');
-                $('div#' + [2] + '_' + [8]).children(".forme.crossV").css('display','block');
-                partie.joueur_gagnant = 'cross';
-            }
-
-            if('cross' == partie.grille[0][2] &&  'cross' == partie.grille[1][4] &&  'cross' == partie.grille[2][6]){
-                $('div#' + [0] + '_' + [2]).children(".forme.cross").css('display','none');
-                $('div#' + [1] + '_' + [4]).children(".forme.cross").css('display','none');
-                $('div#' + [2] + '_' + [6]).children(".forme.cross").css('display','none');
-
-                $('div#' + [0] + '_' + [2]).children(".forme.crossV").css('display','block');
-                $('div#' + [1] + '_' + [4]).children(".forme.crossV").css('display','block');
-                $('div#' + [2] + '_' + [6]).children(".forme.crossV").css('display','block');
-                partie.joueur_gagnant = 'cross';
-            }            
 
             if(partie.joueur_gagnant != null){
                 partie.finish();
