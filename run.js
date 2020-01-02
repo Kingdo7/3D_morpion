@@ -1113,24 +1113,244 @@ $('document').ready(function(e){
             /**
              * 
              * 
-             * NI ATTAQUE NI DEFENSE 
+             * STRATEGIE
              * 
              */
+            let strat = false;
+            let luck = null;
 
-            /** Si il n'y a ni besoin de se défendre, ni occasion d'attaquer */
             if (att == null && def == null || att == null && def == 2) {
-                X = getRandomInt(9);
-                Y = getRandomInt(3);
-            
-                while (partie.grille[X][Y] != null) {
-                    X = getRandomInt(9);
-                    Y = getRandomInt(3);
-                }                
+                /** Maitrise du centre si joueur start avec un coin */
+                /** Plateau 1 */
+                if (null == partie.grille[1][1] && strat == false){
+                    if ('circle' == partie.grille[0][0] || 'circle' == partie.grille[2][0] || 'circle' == partie.grille[0][2] || 'circle' == partie.grille[2][2]){
+                        X = 1;
+                        Y = 1;
+                        strat = true;
+                    }
+                }
+                /** Plateau 2 */
+                if (null == partie.grille[4][1] && strat == false){
+                    if ('circle' == partie.grille[3][0] || 'circle' == partie.grille[5][0] || 'circle' == partie.grille[3][2] || 'circle' == partie.grille[5][2]){
+                        X = 4;
+                        Y = 1;
+                        strat = true;
+                    }
+                }
+                /** Plateau 3 */
+                if (null == partie.grille[7][1] && strat == false){
+                    if ('circle' == partie.grille[6][0] || 'circle' == partie.grille[8][0] || 'circle' == partie.grille[6][2] || 'circle' == partie.grille[8][2]){
+                        X = 7;
+                        Y = 1;
+                        strat = true;
+                    }
+                }
+                /** Maitrise des coins si joueur start avec centre */
+                X = partie.joueur_courant;
+                Y = partie.joueur_courant;
+                /** Plateau 1 */
+                if ('circle' == partie.grille[1][1] && strat == false){                    
+                    while (partie.grille[X][Y] != null) {
+                        luck = getRandomInt(4);
+                        if(null == partie.grille[0][0] && luck == 0 && strat == false) {
+                            X = 0;
+                            Y = 0;
+                            strat = true;
+                        }
+                        if(null == partie.grille[0][2] && luck == 1  && strat == false) {
+                            X = 0;
+                            Y = 2;
+                            strat = true;
+                        }
+                        if(null == partie.grille[2][0] && luck == 2  && strat == false) {
+                            X = 2;
+                            Y = 0;
+                            strat = true;
+                        }
+                        if(null == partie.grille[2][2] && luck == 3  && strat == false) {
+                            X = 2;
+                            Y = 2;
+                            strat = true;
+                        }
+                    }  
+                }
+                /** Plateau 2 */
+                if ('circle' == partie.grille[4][1] && strat == false){
+                    while (partie.grille[X][Y] != null) {
+                        luck = getRandomInt(4);
+                        if(null == partie.grille[3][0] && luck == 0 && strat == false) {
+                            X = 3;
+                            Y = 0;
+                            strat = true;
+                        }
+                        if(null == partie.grille[3][2] && luck == 1  && strat == false) {
+                            X = 3;
+                            Y = 2;
+                            strat = true;
+                        }
+                        if(null == partie.grille[5][0] && luck == 2  && strat == false) {
+                            X = 5;
+                            Y = 0;
+                            strat = true;
+                        }
+                        if(null == partie.grille[5][2] && luck == 3  && strat == false) {
+                            X = 5;
+                            Y = 2;
+                            strat = true;
+                        }
+                    }  
+                }
+                /** Plateau 3 */
+                if ('circle' == partie.grille[6][1] && strat == false){
+                    while (partie.grille[X][Y] != null) {
+                        luck = getRandomInt(4);
+                        if(null == partie.grille[6][0] && luck == 0 && strat == false) {
+                            X = 6;
+                            Y = 0;
+                            strat = true;
+                        }
+                        if(null == partie.grille[6][2] && luck == 1  && strat == false) {
+                            X = 6;
+                            Y = 2;
+                            strat = true;
+                        }
+                        if(null == partie.grille[8][0] && luck == 2  && strat == false) {
+                            X = 8;
+                            Y = 0;
+                            strat = true;
+                        }
+                        if(null == partie.grille[8][2] && luck == 3  && strat == false) {
+                            X = 8;
+                            Y = 2;
+                            strat = true;
+                        }
+                    }  
+                }
+
+                /** Si le joueur ne fait ni les coins, ni le centre, l'ordi le fera */
+                if (strat == false) {
+                    X = ligne_index;
+                    Y = cellule_index;
+                    alea = null;
+                    while (partie.grille[X][Y] != null) {
+                        luck = getRandomInt(6); // 1/2 chance de prendre un coins ou le centre 0,1,2 centre| 3,4,5 coins
+                        if (luck <= 2){ // centre
+                            if (luck == 0 && strat == false){
+                                /** Plateau 1 */
+                                if (null == partie.grille[1][1]){
+                                    X = 1;
+                                    Y = 1;
+                                    strat = true;
+                                }
+                            }
+                            if (luck == 1 && strat == false){
+                                /** Plateau 2 */
+                                if (null == partie.grille[4][1]){
+                                    X = 4;
+                                    Y = 1;
+                                    strat = true;
+                                }
+                            }
+                            if (luck == 2 && strat == false){
+                                /** Plateau 3 */
+                                if (null == partie.grille[7][1]){
+                                    X = 7;
+                                    Y = 1;
+                                    strat = true;
+                                }
+                            }
+                        } else 
+                        if (luck >= 3) { // coins
+                            /** Plateau 1 */                            
+                            if (luck == 3 && strat == false){
+                                alea =  getRandomInt(4);
+                                if(null == partie.grille[0][0] && alea == 0 && strat == false) {
+                                    X = 0;
+                                    Y = 0;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[0][2] && alea == 1  && strat == false) {
+                                    X = 0;
+                                    Y = 2;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[2][0] && alea == 2  && strat == false) {
+                                    X = 2;
+                                    Y = 0;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[2][2] && alea == 3  && strat == false) {
+                                    X = 2;
+                                    Y = 2;
+                                    strat = true;
+                                }
+                            }
+                            /** Plateau 2 */
+                            if (luck == 4 && strat == false) {
+                                alea =  getRandomInt(4);
+                                if(null == partie.grille[3][0] && alea == 0 && strat == false) {
+                                    X = 3;
+                                    Y = 0;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[3][2] && alea == 1  && strat == false) {
+                                    X = 3;
+                                    Y = 2;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[5][0] && alea == 2  && strat == false) {
+                                    X = 5;
+                                    Y = 0;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[5][2] && alea == 3  && strat == false) {
+                                    X = 5;
+                                    Y = 2;
+                                    strat = true;
+                                }
+                            }
+                            /** Plateau 3 */
+                            if (luck == 5 && strat == false) {
+                                alea =  getRandomInt(4);
+                                if(null == partie.grille[6][0] && alea == 0 && strat == false) {
+                                    X = 6;
+                                    Y = 0;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[6][2] && alea == 1  && strat == false) {
+                                    X = 6;
+                                    Y = 2;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[8][0] && alea == 2  && strat == false) {
+                                    X = 8;
+                                    Y = 0;
+                                    strat = true;
+                                }
+                                if(null == partie.grille[8][2] && alea == 3  && strat == false) {
+                                    X = 8;
+                                    Y = 2;
+                                    strat = true;
+                                }
+                            }                            
+                        } 
+                        if (null != partie.grille[1][1] && null != partie.grille[4][1] && null != partie.grille[7][1] //centre
+                            && null != partie.grille[0][0] && null != partie.grille[0][2] && null != partie.grille[2][0] && null != partie.grille[2][2] // P1
+                            && null != partie.grille[3][0] && null != partie.grille[3][2] && null != partie.grille[5][0] && null != partie.grille[5][2] // P2
+                            && null != partie.grille[6][0] && null != partie.grille[6][2] && null != partie.grille[8][0] && null != partie.grille[8][2] // P3
+                            && strat == false) { //si toute les possibilitÃ© voulus sont prise
+                            X = getRandomInt(9);
+                            Y = getRandomInt(3);
+                        }
+                    }
+                }
             }
-            /** Coordonnee si alea */
+
+            /** Coordonnee strat*/
             if (att == null && def == null || att == null && def == 2) {
-                console.log('Random X: ', X);
-                console.log('Random Y: ', Y);
+                console.log('Strat ordi: ', strat);
+                console.log('Strat X: ', X);
+                console.log('Strat Y: ', Y);
             }
 
             /** Je reprend la var de base car j'ai la flemme de tout renommer */
