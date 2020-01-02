@@ -1,3 +1,4 @@
+let url = 'index.html';
 let partie = {
 
     joueur_courant:"circle",
@@ -61,6 +62,6 @@ let partie = {
     ],
 
     finish: function(){
-        alert('Fin de partie, ' + partie.joueur_gagnant + ' a gagne !')
+        alert('Fin de partie, ' + partie.joueur_gagnant + ' a gagne !');
     }
 }
