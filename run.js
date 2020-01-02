@@ -31,12 +31,20 @@ $('document').ready(function(e){
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             }
+            /**
+             * 
+             * 
+             * DEFENSE
+             * 
+             * 
+             */
+
             let def = null;
             let X = null;
             let Y = null;
             
             /** 
-             * Si le joueur a presque gagné, il y a 1/3 de chance que l'IA le bloque 
+             * Ration, 2/3 de chance que l'ordi se defends
              * */
             for(let i=0;i<9;i++){
                 /** Plateau 1 */
@@ -626,26 +634,21 @@ $('document').ready(function(e){
                     Y = 2;
                 } 
             }
+            /** Coordonee si defense */
             console.log('Defense ordi: ', def);
             if (def == 0 || def == 1) {                
                 console.log('Def X: ', X);
                 console.log('Def Y: ', Y);
             } 
-            /*
-            IA de base sans aucune logique 
-            *
-            X = getRandomInt(9);
-            Y = getRandomInt(3);
-        
-            while (partie.grille[X][Y] != null) {
-                X = getRandomInt(9);
-                Y = getRandomInt(3);
-            }
-            */
+            /**
+             * 
+             * 
+             * ATTAQUE
+             * 
+             * 
+             */
            let att = null;
-            /** 
-             * Si l'IA a presque gagné, il y a 1/3 de chance que l'IA gagne 
-             * */
+            
             if ( def == null || def == 2){
                 for(let i=0;i<9;i++){
                     /** Plateau 1 */
@@ -1100,11 +1103,19 @@ $('document').ready(function(e){
                         Y = 2;
                 }
             }
+            /** Coordonnee si attaque */
             console.log('Attaque ordi: ', att); 
             if (att == true) {
                 console.log('Att X: ', X); 
                 console.log('Att Y: ', Y); 
             }
+
+            /**
+             * 
+             * 
+             * NI ATTAQUE NI DEFENSE 
+             * 
+             */
 
             /** Si il n'y a ni besoin de se d�fendre, ni occasion d'attaquer */
             if (att == null && def == null || att == null && def == 2) {
@@ -1114,34 +1125,38 @@ $('document').ready(function(e){
                 while (partie.grille[X][Y] != null) {
                     X = getRandomInt(9);
                     Y = getRandomInt(3);
-                }
+                }                
+            }
+            /** Coordonnee si alea */
+            if (att == null && def == null || att == null && def == 2) {
                 console.log('Random X: ', X);
                 console.log('Random Y: ', Y);
             }
-            
-            
-                   
 
-            /** On assigne les valeurs al�atoire aux variables */
+            /** Je reprend la var de base car j'ai la flemme de tout renommer */
             ligne_index = X;
             cellule_index = Y;
             console.log('---');         
             
-            // mettre à jour la grille
+            // mettre a jour la grille
             partie.grille[ligne_index][cellule_index] = partie.joueur_courant;
 
             // Poser le pion et changer de joueur
             $('div#' + [ligne_index] + '_' + [cellule_index]).children(".forme.cross").css('display','block');
-            /*
-            console.log('this', $(this).children(".forme.cross"));
-            console.log('test', $('div#' + [ligne_index] + '_' + [cellule_index]).children(".forme.cross"));
-            */
+
             joueur_suivant = "circle";
             $(".infos .tour .forme").toggle();
+            /**
+             * 
+             * 
+             * VICTOIRE
+             * 
+             * 
+             */
 
             // tester si la combinaison est gagnante
             /** Alors ici j'ai remplacer la var joueur courant car il n'y a plus de switch case. Je commence toujours par le cercle car si c'est
-             * le tour du joueur et qu'il gagne, je ne v�rifie pas � ce moment si c'est le cas donc je le met en priorit� lors de la v�rification.
+             * le tour du joueur et qu'il gagne, je ne le verifie pas a ce moment la, donc je le met en priorite lors de la verification.
              * Ensuite je colorie la combinaison gagante en vert.
              */
             for(let i=0;i<9;i++){
