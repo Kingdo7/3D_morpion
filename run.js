@@ -29,200 +29,891 @@ $('document').ready(function(e){
             function getRandomInt(max) {
                 return Math.floor(Math.random() * Math.floor(max));
             }
+            let def = 4;
             
-            /** Si le joueur a presque gagné, il y a 1/3 de chance que l'IA le bloque 
+            /** Si le joueur a presque gagné, il y a 1/3 de chance que l'IA le bloque */
             for(let i=0;i<9;i++){
                 switch (partie.grille){
-                    case 'circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][1] :
-                    let def = getRandomInt(3);
+                    /**********************************************************/
+                    /** Plateau 1 */
+                    case 'circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][1] &&  null != partie.grille[i][2] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 2;
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][2] :
-                    let def = getRandomInt(3);
+                    case 'circle' == partie.grille[i][0] &&  null != partie.grille[i][1] &&  'circle' == partie.grille[i][2] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 1;
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[i][1] &&  'circle' == partie.grille[i][2] :
-                    let def = getRandomInt(3);
-                    break;
+                    case null != partie.grille[i][0] &&  'circle' == partie.grille[i][1] &&  'circle' == partie.grille[i][2] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 0;
 
-                    case 'circle' == partie.grille[0][i] &&  'circle' == partie.grille[1][i] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[0][i] &&  'circle' == partie.grille[2][i] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[1][i] &&  'circle' == partie.grille[2][i] :
-                        let def = getRandomInt(3);
-                    break;
+                    /**********************************************************/
+                    case 'circle' == partie.grille[0][i] &&  'circle' == partie.grille[1][i] &&  null != partie.grille[2][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 2;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[i][3] &&  'circle' == partie.grille[i][4] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[i][3] &&  'circle' == partie.grille[i][5] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[i][4] &&  'circle' == partie.grille[i][5] :
-                        let def = getRandomInt(3);
-                    break;
+                    case 'circle' == partie.grille[0][i] &&  null != partie.grille[1][i] &&  'circle' == partie.grille[2][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 1;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[3][i] &&  'circle' == partie.grille[4][i] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[3][i] &&  'circle' == partie.grille[5][i] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[4][i] &&  'circle' == partie.grille[5][i] :
-                        let def = getRandomInt(3);
-                    break;
+                    case null != partie.grille[0][i] &&  'circle' == partie.grille[1][i] &&  'circle' == partie.grille[2][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 0;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[i][6] &&  'circle' == partie.grille[i][7] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[i][6] &&  'circle' == partie.grille[i][8] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[i][7] &&  'circle' == partie.grille[i][8] :
-                        let def = getRandomInt(3);
-                    break;
+                    /**********************************************************/
+                    /** Plateau 2 */
+                    case 'circle' == partie.grille[i][3] &&  'circle' == partie.grille[i][4] &&  null != partie.grille[i][5] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 5;
 
-                    case 'circle' == partie.grille[6][i] &&  'circle' == partie.grille[7][i] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[6][i] &&  'circle' == partie.grille[8][i] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[7][i] &&  'circle' == partie.grille[8][i] :
-                        let def = getRandomInt(3);
-                    break;
+                    case 'circle' == partie.grille[i][3] &&  null != partie.grille[i][4] &&  'circle' == partie.grille[i][5] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 4;
 
-                    case 'circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][3] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][6] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[i][3] &&  'circle' == partie.grille[i][6] :
-                        let def = getRandomInt(3);
-                    break;
+                    case null != partie.grille[i][3] &&  'circle' == partie.grille[i][4] &&  'circle' == partie.grille[i][5] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 3;
 
-                    case 'circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][4] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[i][0] &&  'circle' == partie.grille[i][8] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[i][4] &&  'circle' == partie.grille[i][8] :
-                        let def = getRandomInt(3);
-                    break;
+                    /**********************************************************/
+                    case 'circle' == partie.grille[3][i] &&  'circle' == partie.grille[4][i] &&  null != partie.grille[5][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 5;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[0][i] &&  'circle' == partie.grille[1][i+3] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[0][i] &&  'circle' == partie.grille[2][i+6] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[1][i+3] &&  'circle' == partie.grille[2][i+6] :
-                        let def = getRandomInt(3);
-                    break;
+                    case 'circle' == partie.grille[3][i] &&  null != partie.grille[4][i] &&  'circle' == partie.grille[5][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 4;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[0][0] &&  'circle' == partie.grille[1][1] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[0][0] &&  'circle' == partie.grille[2][2] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[1][1] &&  'circle' == partie.grille[2][2] :
-                        let def = getRandomInt(3);
-                    break;
+                    case null != partie.grille[3][i] &&  'circle' == partie.grille[4][i] &&  'circle' == partie.grille[5][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 3;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[2][0] &&  'circle' == partie.grille[1][1] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[2][0] &&  'circle' == partie.grille[0][2] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[1][1] &&  'circle' == partie.grille[0][2] :
-                        let def = getRandomInt(3);
-                    break;
+                    /**********************************************************/
+                    /** Plateau 3 */
+                    case 'circle' == partie.grille[i][6] &&  'circle' == partie.grille[i][7] &&  null != partie.grille[i][8] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 8;
 
-                    case 'circle' == partie.grille[3][3] &&  'circle' == partie.grille[4][4] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[3][3] &&  'circle' == partie.grille[5][5] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[4][4] &&  'circle' == partie.grille[5][5] :
-                        let def = getRandomInt(3);
-                    break;
+                    case 'circle' == partie.grille[i][6] &&  null != partie.grille[i][7] &&  'circle' == partie.grille[i][8] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 7;
 
-                    case 'circle' == partie.grille[3][5] &&  'circle' == partie.grille[4][4] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[3][5] &&  'circle' == partie.grille[5][3] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[4][4] &&  'circle' == partie.grille[5][3] :
-                        let def = getRandomInt(3);
-                    break;
+                    case null != partie.grille[i][6] &&  'circle' == partie.grille[i][7] &&  'circle' == partie.grille[i][8] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = i;
+                            let Y = 6;
 
-                    case 'circle' == partie.grille[6][6] &&  'circle' == partie.grille[7][7] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[6][6] && 'circle' == partie.grille[8][8] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[7][7] &&  'circle' == partie.grille[8][8] :
-                        let def = getRandomInt(3);
-                    break;
+                    /**********************************************************/
+                    case 'circle' == partie.grille[6][i] &&  'circle' == partie.grille[7][i] &&  null != partie.grille[8][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 8;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[6][8] &&  'circle' == partie.grille[7][7] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[6][8] &&  'circle' == partie.grille[8][6] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[7][7] &&  'circle' == partie.grille[8][6] :
-                        let def = getRandomInt(3);
-                    break;
+                    case 'circle' == partie.grille[6][i] &&  null != partie.grille[7][i] &&  'circle' == partie.grille[8][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 7;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[0][0] &&  'circle' == partie.grille[1][4] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[0][0] &&  'circle' == partie.grille[2][8] :
-                        let def = getRandomInt(3);
-                    break;
-                    case 'circle' == partie.grille[1][4] &&  'circle' == partie.grille[2][8] :
-                        let def = getRandomInt(3);
-                    break;
+                    case null != partie.grille[6][i] &&  'circle' == partie.grille[7][i] &&  'circle' == partie.grille[8][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 6;
+                            let Y = i;
 
-                    case 'circle' == partie.grille[0][2] &&  'circle' == partie.grille[1][4] :
-                        let def = getRandomInt(3);
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[0][2] && 'circle' == partie.grille[2][6] :
-                        let def = getRandomInt(3);
+                    /**********************************************************/
+                    /** Inter Plateau Traverse */
+                    case 'circle' == partie.grille[0][i] &&  'circle' == partie.grille[3][i] &&  null != partie.grille[6][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 6;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
-                    case 'circle' == partie.grille[1][4] &&  'circle' == partie.grille[2][6] :
-                        let def = getRandomInt(3);
+                    case 'circle' == partie.grille[0][i] &&  null != partie.grille[3][i] &&  'circle' == partie.grille[6][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 3;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
                     break;
+                    case null != partie.grille[0][i] &&  'circle' == partie.grille[3][i] &&  'circle' == partie.grille[6][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 0;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
+                    break;
+                    /**********************************************************/
+                    case 'circle' == partie.grille[1][i] &&  'circle' == partie.grille[4][i] &&  null != partie.grille[7][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 7;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
+                    break;
+                    case 'circle' == partie.grille[1][i] &&  null != partie.grille[4][i] &&  'circle' == partie.grille[7][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 4;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
+                    break;
+                    case null != partie.grille[1][i] &&  'circle' == partie.grille[4][i] &&  'circle' == partie.grille[7][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 1;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
+                    break;
+                    /**********************************************************/
+                    case 'circle' == partie.grille[2][i] &&  'circle' == partie.grille[5][i] &&  null != partie.grille[8][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 8;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
+                    break;
+                    case 'circle' == partie.grille[2][i] &&  null != partie.grille[5][i] &&  'circle' == partie.grille[8][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 5;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
+                    break;
+                    case null != partie.grille[2][i] &&  'circle' == partie.grille[5][i] &&  'circle' == partie.grille[8][i] :
+                        def = getRandomInt(3);
+                        if (def == 0 || def == 1) {
+                            let X = 2;
+                            let Y = i;
+
+                        } else {
+                            /*Instanciation chiffre al�atoire */
+                            let X = getRandomInt(3);
+                            let Y = getRandomInt(9);
+                        }
+                    break;                                  
                 }
+            } //End for
 
-                if (def == 1) {
-                        
-                } else {
-                    /*Instanciation chiffre al�atoire *
+
+            switch(partie.grille){
+                /**********************************************************/
+                /** Plateau 1 diagonales */
+                case 'circle' == partie.grille[0][0] &&  'circle' == partie.grille[1][1] &&  null != partie.grille[2][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 2;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[0][0] &&  null != partie.grille[1][1] &&  'circle' == partie.grille[2][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 1;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[0][0] &&  'circle' == partie.grille[1][1] &&  'circle' == partie.grille[2][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 0;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/                   
+                case 'circle' == partie.grille[2][0] &&  'circle' == partie.grille[1][1] &&  null != partie.grille[0][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 0;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[2][0] &&  null != partie.grille[1][1] &&  'circle' == partie.grille[0][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 1;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[2][0] &&  'circle' == partie.grille[1][1] &&  'circle' == partie.grille[0][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 2;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                /** Plateau 2 diagonales */
+                case 'circle' == partie.grille[3][0] &&  'circle' == partie.grille[4][1] &&  null != partie.grille[5][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 5;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[3][0] &&  null != partie.grille[4][1] &&  'circle' == partie.grille[5][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 4;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[3][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[5][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 3;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                case 'circle' == partie.grille[3][2] &&  'circle' == partie.grille[4][1] &&  null != partie.grille[5][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 5;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[3][2] &&  null != partie.grille[4][1] &&  'circle' == partie.grille[5][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 4;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[3][2] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[5][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 3;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                /** Plateau 3 diagonales */
+                case 'circle' == partie.grille[6][0] &&  'circle' == partie.grille[7][1] &&  null != partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 8;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[6][0] &&  null != partie.grille[7][1] &&  'circle' == partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 7;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[6][0] &&  'circle' == partie.grille[7][1] &&  'circle' == partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 6;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                case 'circle' == partie.grille[6][2] &&  'circle' == partie.grille[7][1] &&  null != partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 8;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[6][2] &&  null != partie.grille[7][1] &&  'circle' == partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 7;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break;
+                case null != partie.grille[6][2] &&  'circle' == partie.grille[7][1] &&  'circle' == partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 6;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break;
+                /**********************************************************/
+                /** Inter Plateau ligne */
+                case 'circle' == partie.grille[0][0] &&  'circle' == partie.grille[3][1] &&  null != partie.grille[6][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 6;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[0][0] &&  null != partie.grille[3][1] &&  'circle' == partie.grille[6][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 3;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[0][0] &&  'circle' == partie.grille[3][1] &&  'circle' == partie.grille[6][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 0;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                case 'circle' == partie.grille[1][0] &&  'circle' == partie.grille[4][1] &&  null != partie.grille[7][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 7;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[1][0] &&  null != partie.grille[4][1] &&  'circle' == partie.grille[7][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 4;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[1][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[7][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 1;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                case 'circle' == partie.grille[2][0] &&  'circle' == partie.grille[5][1] &&  null != partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 8;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[2][0] &&  null != partie.grille[5][1] &&  'circle' == partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 5;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[2][0] &&  'circle' == partie.grille[5][1] &&  'circle' == partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 2;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                /** Inter plateau colonnes */
+                case 'circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][0] &&  null != partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 8;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[0][0] &&  null != partie.grille[4][0] &&  'circle' == partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 4;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[0][0] &&  'circle' == partie.grille[4][0] &&  'circle' == partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 0;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                case 'circle' == partie.grille[0][1] &&  'circle' == partie.grille[4][1] &&  null != partie.grille[8][1] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 8;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[0][1] &&  null != partie.grille[4][1] &&  'circle' == partie.grille[8][1] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 4;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[0][1] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[8][1] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 0;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                case 'circle' == partie.grille[0][2] &&  'circle' == partie.grille[4][2] &&  null != partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 8;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[0][2] &&  null != partie.grille[4][2] &&  'circle' == partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 4;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break;
+                case null != partie.grille[0][2] &&  'circle' == partie.grille[4][2] &&  'circle' == partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 0;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break;
+                /**********************************************************/
+                /** Inter plateau diagonales */
+                case 'circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][1] &&  null != partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 8;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[0][0] &&  null != partie.grille[4][1] &&  'circle' == partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 4;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[0][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[8][2] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 0;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                case 'circle' == partie.grille[0][2] &&  'circle' == partie.grille[4][1] &&  null != partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 8;
+                        let Y = 0;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case 'circle' == partie.grille[0][2] &&  null != partie.grille[4][1] &&  'circle' == partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 4;
+                        let Y = 1;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                case null != partie.grille[0][2] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[8][0] :
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        let X = 0;
+                        let Y = 2;
+
+                    } else {
+                        /*Instanciation chiffre al�atoire */
+                        let X = getRandomInt(3);
+                        let Y = getRandomInt(9);
+                    }
+                break; 
+                /**********************************************************/
+                default:
                     let X = getRandomInt(3);
                     let Y = getRandomInt(9);
-                }
-                
-                /*V�rification que la cellule est vide avant de finalis� la position*
-                while (partie.grille[X][Y] != null) {
-                    X = getRandomInt(3);
-                    Y = getRandomInt(9);
-                }
-            }*/
 
-            /*Instanciation chiffre al�atoire */
+                    while (partie.grille[X][Y] != null) {
+                        X = getRandomInt(3);
+                        Y = getRandomInt(9);
+                    }
+                break;
+            }                
+
+            /*Instanciation chiffre al�atoire 
             let X = getRandomInt(9);
             let Y = getRandomInt(3);
-            /*V�rification que la cellule est vide avant de finalis� la position*/
+            /*V�rification que la cellule est vide avant de finalis� la position*
             while (partie.grille[X][Y] != null) {
                 X = getRandomInt(9);
                 Y = getRandomInt(3);
@@ -271,7 +962,6 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'circle';
                     break;
                 }
-
                 if('circle' == partie.grille[0][i] &&  'circle' == partie.grille[1][i] &&  'circle' == partie.grille[2][i]){
                     $('div#' + [0] + '_' + [i]).children(".forme.circle").css('display','none');
                     $('div#' + [1] + '_' + [i]).children(".forme.circle").css('display','none');
@@ -283,7 +973,6 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'circle'; 
                     break;
                 }
-
                 if('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2]){
                     $('div#' + [i] + '_' + [0]).children(".forme.cross").css('display','none');
                     $('div#' + [i] + '_' + [1]).children(".forme.cross").css('display','none');
@@ -295,7 +984,6 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'cross';
                     break;
                 }
-
                 if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  'cross' == partie.grille[2][i]){
                     $('div#' + [0] + '_' + [i]).children(".forme.cross").css('display','none');
                     $('div#' + [1] + '_' + [i]).children(".forme.cross").css('display','none');
@@ -307,6 +995,9 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'cross'; 
                     break;
                 }
+
+
+
                 /** Plateau 2 */
                 if('circle' == partie.grille[i][3] &&  'circle' == partie.grille[i][4] &&  'circle' == partie.grille[i][5]){  
                     $('div#' + [i] + '_' + [3]).children(".forme.circle").css('display','none');
@@ -319,7 +1010,6 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'circle';
                     break;
                 }
-
                 if('circle' == partie.grille[3][i] &&  'circle' == partie.grille[4][i] &&  'circle' == partie.grille[5][i]){
                     $('div#' + [3] + '_' + [i]).children(".forme.circle").css('display','none');
                     $('div#' + [4] + '_' + [i]).children(".forme.circle").css('display','none');
@@ -331,7 +1021,6 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'circle'; 
                     break;
                 }
-
                 if('cross' == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  'cross' == partie.grille[i][5]){
                     $('div#' + [i] + '_' + [3]).children(".forme.cross").css('display','none');
                     $('div#' + [i] + '_' + [4]).children(".forme.cross").css('display','none');
@@ -343,7 +1032,6 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'cross';
                     break;
                 }
-
                 if('cross' == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[5][i]){
                     $('div#' + [3] + '_' + [i]).children(".forme.cross").css('display','none');
                     $('div#' + [4] + '_' + [i]).children(".forme.cross").css('display','none');
@@ -355,6 +1043,9 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'cross'; 
                     break;
                 }
+
+
+
                 /** Plateau 3 */
                 if('circle' == partie.grille[i][6] &&  'circle' == partie.grille[i][7] &&  'circle' == partie.grille[i][8]){  
                     $('div#' + [i] + '_' + [6]).children(".forme.circle").css('display','none');
@@ -403,6 +1094,9 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'cross'; 
                     break;
                 }
+
+
+
 
                 /** Inter Plateau traverse */
                 if('circle' == partie.grille[0][i] &&  'circle' == partie.grille[3][i] &&  'circle' == partie.grille[6][i]){  
@@ -476,51 +1170,11 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'cross';
                     break;
                 }
-                /** Inter Plateau lignes */
-                if('circle' == partie.grille[i][0] &&  'circle' == partie.grille[i+3][1] &&  'circle' == partie.grille[i+6][2]){
-                    $('div#' + [i] + '_' + [0]).children(".forme.circle").css('display','none');
-                    $('div#' + [i+3] + '_' + [1]).children(".forme.circle").css('display','none');
-                    $('div#' + [i+6] + '_' + [2]).children(".forme.circle").css('display','none');
-
-                    $('div#' + [i] + '_' + [0]).children(".forme.circleV").css('display','block');
-                    $('div#' + [i+3] + '_' + [1]).children(".forme.circleV").css('display','block');
-                    $('div#' + [i+6] + '_' + [2]).children(".forme.circleV").css('display','block');
-                    partie.joueur_gagnant = 'circle';
-                }
-                if('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2]){
-                    $('div#' + [i] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [2]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [i] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [2]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                }
-
-                /** Inter Plateau colones */
-                if('circle' == partie.grille[0][i] &&  'circle' == partie.grille[4][i] &&  'circle' == partie.grille[8][i]){
-                    $('div#' + [0] + '_' + [i]).children(".forme.circle").css('display','none');
-                    $('div#' + [4] + '_' + [i]).children(".forme.circle").css('display','none');
-                    $('div#' + [8] + '_' + [i]).children(".forme.circle").css('display','none');
-
-                    $('div#' + [0] + '_' + [i]).children(".forme.circleV").css('display','block');
-                    $('div#' + [4] + '_' + [i]).children(".forme.circleV").css('display','block');
-                    $('div#' + [8] + '_' + [i]).children(".forme.circleV").css('display','block');
-                    partie.joueur_gagnant = 'circle';
-                }
-                if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[8][i]){
-                    $('div#' + [0] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [4] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [8] + '_' + [i]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [0] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [4] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [8] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                }
-
             }
+
+
+
+
 
             /** Plateau 1  diagonales */
             if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[1][1] &&  'circle' == partie.grille[2][2]){
@@ -566,6 +1220,9 @@ $('document').ready(function(e){
                 $('div#' + [0] + '_' + [2]).children(".forme.crossV").css('display','block');
                 partie.joueur_gagnant = 'cross';
             }
+
+
+
             /** Plateau 2  diagonales */
             if('circle' == partie.grille[3][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[5][2]){
                 $('div#' + [3] + '_' + [0]).children(".forme.circle").css('display','none');
@@ -611,6 +1268,8 @@ $('document').ready(function(e){
                 partie.joueur_gagnant = 'cross';
             }
 
+
+
             /** Plateau 3 diagonales */
             if('circle' == partie.grille[6][0] &&  'circle' == partie.grille[7][1] &&  'circle' == partie.grille[8][2]){
                 $('div#' + [6] + '_' + [0]).children(".forme.circle").css('display','none');
@@ -655,6 +1314,136 @@ $('document').ready(function(e){
                 $('div#' + [8] + '_' + [0]).children(".forme.crossV").css('display','block');
                 partie.joueur_gagnant = 'cross';
             }
+            
+
+
+            /** Inter Plateau lignes */
+            if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[3][1] &&  'circle' == partie.grille[6][2]){
+                $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [3] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [6] + '_' + [2]).children(".forme.circle").css('display','none');
+
+                $('div#' + [0] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [3] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [6] + '_' + [2]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('circle' == partie.grille[1][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[7][2]){
+                $('div#' + [1] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [7] + '_' + [2]).children(".forme.circle").css('display','none');
+
+                $('div#' + [1] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [7] + '_' + [2]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('circle' == partie.grille[2][0] &&  'circle' == partie.grille[5][1] &&  'circle' == partie.grille[8][2]){
+                $('div#' + [2] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [5] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [2]).children(".forme.circle").css('display','none');
+
+                $('div#' + [2] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [5] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('cross' == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][2]){
+                $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
+                $('div#' + [3] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [6] + '_' + [2]).children(".forme.cross").css('display','none');
+
+                $('div#' + [0] + '_' + [0]).children(".forme.crossV").css('display','block');
+                $('div#' + [3] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [6] + '_' + [2]).children(".forme.crossV").css('display','block');
+                partie.joueur_gagnant = 'cross';
+            }
+            if('cross' == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][2]){
+                $('div#' + [1] + '_' + [0]).children(".forme.cross").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [7] + '_' + [2]).children(".forme.cross").css('display','none');
+
+                $('div#' + [1] + '_' + [0]).children(".forme.crossV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [7] + '_' + [2]).children(".forme.crossV").css('display','block');
+                partie.joueur_gagnant = 'cross';
+            }
+            if('cross' == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][2]){
+                $('div#' + [2] + '_' + [0]).children(".forme.cross").css('display','none');
+                $('div#' + [5] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [8] + '_' + [2]).children(".forme.cross").css('display','none');
+
+                $('div#' + [2] + '_' + [0]).children(".forme.crossV").css('display','block');
+                $('div#' + [5] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [8] + '_' + [2]).children(".forme.crossV").css('display','block');
+                partie.joueur_gagnant = 'cross';
+            }
+
+
+
+            /** Inter Plateau colones */
+            if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][0] &&  'circle' == partie.grille[8][0]){
+                $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [0]).children(".forme.circle").css('display','none');
+
+                $('div#' + [0] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [0]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('circle' == partie.grille[0][1] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[8][1]){
+                $('div#' + [0] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [1]).children(".forme.circle").css('display','none');
+
+                $('div#' + [0] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [1]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('circle' == partie.grille[0][2] &&  'circle' == partie.grille[4][2] &&  'circle' == partie.grille[8][2]){
+                $('div#' + [0] + '_' + [2]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [2]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [2]).children(".forme.circle").css('display','none');
+
+                $('div#' + [0] + '_' + [2]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [2]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[8][0]){
+                $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
+                $('div#' + [4] + '_' + [0]).children(".forme.cross").css('display','none');
+                $('div#' + [8] + '_' + [0]).children(".forme.cross").css('display','none');
+
+                $('div#' + [0] + '_' + [0]).children(".forme.crossV").css('display','block');
+                $('div#' + [4] + '_' + [0]).children(".forme.crossV").css('display','block');
+                $('div#' + [8] + '_' + [0]).children(".forme.crossV").css('display','block');
+                partie.joueur_gagnant = 'cross';
+            }
+            if('cross' == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][1]){
+                $('div#' + [0] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
+                $('div#' + [8] + '_' + [1]).children(".forme.cross").css('display','none');
+
+                $('div#' + [0] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
+                $('div#' + [8] + '_' + [1]).children(".forme.crossV").css('display','block');
+                partie.joueur_gagnant = 'cross';
+            }
+            if('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[8][2]){
+                $('div#' + [0] + '_' + [2]).children(".forme.cross").css('display','none');
+                $('div#' + [4] + '_' + [2]).children(".forme.cross").css('display','none');
+                $('div#' + [8] + '_' + [2]).children(".forme.cross").css('display','none');
+
+                $('div#' + [0] + '_' + [2]).children(".forme.crossV").css('display','block');
+                $('div#' + [4] + '_' + [2]).children(".forme.crossV").css('display','block');
+                $('div#' + [8] + '_' + [2]).children(".forme.crossV").css('display','block');
+                partie.joueur_gagnant = 'cross';
+            }
+
+
 
             /** Inter Plateau diagonales */
             if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[8][2]){
