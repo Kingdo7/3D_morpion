@@ -1521,7 +1521,7 @@ $('document').ready(function(e){
                                 Y = 2;
                                 strat = true;
                             }
-                            if (strat == false) {
+                            if (strat == false && null != partie.grille[0][0] && null != partie.grille[0][2] && null != partie.grille[2][0] && null != partie.grille[2][2]) {
                                 break;
                             }
                         }  
@@ -1550,7 +1550,7 @@ $('document').ready(function(e){
                                 Y = 2;
                                 strat = true;
                             }
-                            if (strat == false) {
+                            if (strat == false && null != partie.grille[3][0] && null != partie.grille[3][2] && null != partie.grille[5][0] && null != partie.grille[5][2]) {
                                 break;
                             }
                         }  
@@ -1579,7 +1579,7 @@ $('document').ready(function(e){
                                 Y = 2;
                                 strat = true;
                             }
-                            if (strat == false) {
+                            if (strat == false && null != partie.grille[6][0] && null != partie.grille[6][2] && null != partie.grille[8][0] && null != partie.grille[8][2]) {
                                 break;
                             }
                         }  
@@ -1699,7 +1699,7 @@ $('document').ready(function(e){
                                 && strat == false) { //si toute les possibilité voulus sont prise
                                 X = getRandomInt(9);
                                 Y = getRandomInt(3);
-                            }
+                            }                            
                         }
                     }
                 }
