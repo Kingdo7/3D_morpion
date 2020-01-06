@@ -1128,392 +1128,479 @@ $('document').ready(function(e){
                 if ( def == null || def == 2){
                     for(let i=0;i<9;i++){
                         /** Plateau 1 */
-                        if ('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  null == partie.grille[i][2] && def == null) {
+                        if ('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  null == partie.grille[i][2] && att == false) {
                                 X = i;
                                 Y = 2;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[i][0] &&  null == partie.grille[i][1] &&  'cross' == partie.grille[i][2] && def == null) {
+                        if ('cross' == partie.grille[i][0] &&  null == partie.grille[i][1] &&  'cross' == partie.grille[i][2] && att == false) {
                                 X = i;
                                 Y = 1;
+                                att = true;
                         } else 
-                        if (null == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2] && def == null) {
+                        if (null == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2] && att == false) {
                                 X = i;
                                 Y = 0;
+                                att = true;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  null == partie.grille[2][i] && def == null) {
+                        if ('cross' == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  null == partie.grille[2][i] && att == false) {
                                 X = 2;
                                 Y = i;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[0][i] &&  null == partie.grille[1][i] &&  'cross' == partie.grille[2][i] && def == null) {
+                        if ('cross' == partie.grille[0][i] &&  null == partie.grille[1][i] &&  'cross' == partie.grille[2][i] && att == false) {
                                 X = 1;
                                 Y = i;
+                                att = true;
                         } else 
-                        if (null == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  'cross' == partie.grille[2][i] && def == null) {
+                        if (null == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  'cross' == partie.grille[2][i] && att == false) {
                                 X = 0;
                                 Y = i;
+                                att = true;
                         } else 
                         /**********************************************************/
                         /** Plateau 2 */
-                        if ('cross' == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  null == partie.grille[i][5] && def == null) {
+                        if ('cross' == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  null == partie.grille[i][5] && att == false) {
                                 X = i;
                                 Y = 5;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[i][3] &&  null == partie.grille[i][4] &&  'cross' == partie.grille[i][5] && def == null) {
+                        if ('cross' == partie.grille[i][3] &&  null == partie.grille[i][4] &&  'cross' == partie.grille[i][5] && att == false) {
                                 X = i;
                                 Y = 4;
+                                att = true;
                         } else 
-                        if (null == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  'cross' == partie.grille[i][5] && def == null) {
+                        if (null == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  'cross' == partie.grille[i][5] && att == false) {
                                 X = i;
                                 Y = 3;
+                                att = true;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  null == partie.grille[5][i] && def == null) {
+                        if ('cross' == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  null == partie.grille[5][i] && att == false) {
                                 X = 5;
                                 Y = i;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[3][i] &&  null == partie.grille[4][i] &&  'cross' == partie.grille[5][i] && def == null) {
+                        if ('cross' == partie.grille[3][i] &&  null == partie.grille[4][i] &&  'cross' == partie.grille[5][i] && att == false) {
                                 X = 4;
                                 Y = i;
+                                att = true;
                         } else 
-                        if (null == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[5][i] && def == null) {
+                        if (null == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[5][i] && att == false) {
                                 X = 3;
                                 Y = i;
+                                att = true;
                         } else 
                         /**********************************************************/
                         /** Plateau 3 */
-                        if ('cross' == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  null == partie.grille[i][8] && def == null) {
+                        if ('cross' == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  null == partie.grille[i][8] && att == false) {
                                 X = i;
                                 Y = 8;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[i][6] &&  null == partie.grille[i][7] &&  'cross' == partie.grille[i][8] && def == null) {
+                        if ('cross' == partie.grille[i][6] &&  null == partie.grille[i][7] &&  'cross' == partie.grille[i][8] && att == false) {
                                 X = i;
                                 Y = 7;
+                                att = true;
                         } else 
-                        if (null == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  'cross' == partie.grille[i][8] && def == null) {
+                        if (null == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  'cross' == partie.grille[i][8] && att == false) {
                                 X = i;
                                 Y = 6;
+                                att = true;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  null == partie.grille[8][i] && def == null) {
+                        if ('cross' == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  null == partie.grille[8][i] && att == false) {
                                 X = 8;
                                 Y = i;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[6][i] &&  null == partie.grille[7][i] &&  'cross' == partie.grille[8][i] && def == null) {
+                        if ('cross' == partie.grille[6][i] &&  null == partie.grille[7][i] &&  'cross' == partie.grille[8][i] && att == false) {
                                 X = 7;
                                 Y = i;
+                                att = true;
                         } else 
-                        if (null == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  'cross' == partie.grille[8][i] && def == null) {
+                        if (null == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  'cross' == partie.grille[8][i] && att == false) {
                                 X = 6;
                                 Y = i;
+                                att = true;
                         } else 
                         /**********************************************************/
                         /** Inter Plateau Traverse */
-                        if ('cross' == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  null == partie.grille[6][i] && def == null) {
+                        if ('cross' == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  null == partie.grille[6][i] && att == false) {
                                 X = 6;
                                 Y = i;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[0][i] &&  null == partie.grille[3][i] &&  'cross' == partie.grille[6][i] && def == null) {
+                        if ('cross' == partie.grille[0][i] &&  null == partie.grille[3][i] &&  'cross' == partie.grille[6][i] && att == false) {
                                 X = 3;
                                 Y = i;
+                                att = true;
                         } else 
-                        if (null == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  'cross' == partie.grille[6][i] && def == null) {
+                        if (null == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  'cross' == partie.grille[6][i] && att == false) {
                                 X = 0;
                                 Y = i;
+                                att = true;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  null == partie.grille[7][i] && def == null) {
+                        if ('cross' == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  null == partie.grille[7][i] && att == false) {
                                 X = 7;
                                 Y = i;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[1][i] &&  null == partie.grille[4][i] &&  'cross' == partie.grille[7][i] && def == null) {
+                        if ('cross' == partie.grille[1][i] &&  null == partie.grille[4][i] &&  'cross' == partie.grille[7][i] && att == false) {
                                 X = 4;
                                 Y = i;
+                                att = true;
                         } else 
-                        if (null == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[7][i] && def == null) {
+                        if (null == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[7][i] && att == false) {
                                 X = 1;
                                 Y = i;
+                                att = true;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  null == partie.grille[8][i] && def == null) {
+                        if ('cross' == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  null == partie.grille[8][i] && att == false) {
                                 X = 8;
                                 Y = i;
+                                att = true;
                         } else 
-                        if ('cross' == partie.grille[2][i] &&  null == partie.grille[5][i] &&  'cross' == partie.grille[8][i] && def == null) {
+                        if ('cross' == partie.grille[2][i] &&  null == partie.grille[5][i] &&  'cross' == partie.grille[8][i] && att == false) {
                                 X = 5;
                                 Y = i;
+                                att = true;
                         } else 
-                        if (null == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  'cross' == partie.grille[8][i] && def == null) {
+                        if (null == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  'cross' == partie.grille[8][i] && att == false) {
                                 X = 2;
                                 Y = i;
+                                att = true;
                         } 
                     } //End for
 
                     /**********************************************************//**********************************************************/
                     /** Plateau 1 diagonales */
-                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  null == partie.grille[2][2] && def == null) {
+                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  null == partie.grille[2][2] && att == false) {
                             X = 2;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[1][1] &&  'cross' == partie.grille[2][2] && def == null) {
+                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[1][1] &&  'cross' == partie.grille[2][2] && att == false) {
                             X = 1;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[2][2] && def == null) {
+                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[2][2] && att == false) {
                             X = 0;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************/                   
-                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[1][1] &&  null == partie.grille[0][2] && def == null) {
+                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[1][1] &&  null == partie.grille[0][2] && att == false) {
                             X = 0;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[1][1] &&  'cross' == partie.grille[0][2] && def == null) {
+                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[1][1] &&  'cross' == partie.grille[0][2] && att == false) {
                             X = 1;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[0][2] && def == null) {
+                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[0][2] && att == false) {
                             X = 2;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************/
                     /** Plateau 2 diagonales */
-                    if ('cross' == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[5][2] && def == null) {
+                    if ('cross' == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[5][2] && att == false) {
                             X = 5;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[3][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[5][2] && def == null) {
+                    if ('cross' == partie.grille[3][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[5][2] && att == false) {
                             X = 4;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][2] && def == null) {
+                    if (null == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][2] && att == false) {
                             X = 3;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[5][0] && def == null) {
+                    if ('cross' == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[5][0] && att == false) {
                             X = 5;
                             Y = 0;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[3][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[5][0] && def == null) {
+                    if ('cross' == partie.grille[3][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[5][0] && att == false) {
                             X = 4;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][0] && def == null) {
+                    if (null == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][0] && att == false) {
                             X = 3;
                             Y = 2;
+                            att = true;
                     } else  
                     /**********************************************************/
                     /** Plateau 3 diagonales */
-                    if ('cross' == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  null == partie.grille[8][2] && def == null) {
+                    if ('cross' == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  null == partie.grille[8][2] && att == false) {
                             X = 8;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[6][0] &&  null == partie.grille[7][1] &&  'cross' == partie.grille[8][2] && def == null) {
+                    if ('cross' == partie.grille[6][0] &&  null == partie.grille[7][1] &&  'cross' == partie.grille[8][2] && att == false) {
                             X = 7;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][2] && def == null) {
+                    if (null == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][2] && att == false) {
                             X = 6;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  null == partie.grille[8][0] && def == null) {
+                    if ('cross' == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  null == partie.grille[8][0] && att == false) {
                             X = 8;
                             Y = 0;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[6][2] &&  null == partie.grille[7][1] &&  'cross' == partie.grille[8][0] && def == null) {
+                    if ('cross' == partie.grille[6][2] &&  null == partie.grille[7][1] &&  'cross' == partie.grille[8][0] && att == false) {
                             X = 7;
                             Y = 1;
+                            att = true;
                     } else 
-                    if (null == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][0] && def == null) {
+                    if (null == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][0] && att == false) {
                             X = 6;
                             Y = 2;
+                            att = true;
                     } else 
                     /**********************************************************/
                     /** Inter Plateau ligne */
-                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  null == partie.grille[6][2] && def == null) {
+                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  null == partie.grille[6][2] && att == false) {
                             X = 6;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[3][1] &&  'cross' == partie.grille[6][2] && def == null) {
+                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[3][1] &&  'cross' == partie.grille[6][2] && att == false) {
                             X = 3;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][2] && def == null) {
+                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][2] && att == false) {
                             X = 0;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[7][2] && def == null) {
+                    if ('cross' == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[7][2] && att == false) {
                             X = 7;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[1][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[7][2] && def == null) {
+                    if ('cross' == partie.grille[1][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[7][2] && att == false) {
                             X = 4;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][2] && def == null) {
+                    if (null == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][2] && att == false) {
                             X = 1;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  null == partie.grille[8][2] && def == null) {
+                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  null == partie.grille[8][2] && att == false) {
                             X = 8;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[5][1] &&  'cross' == partie.grille[8][2] && def == null) {
+                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[5][1] &&  'cross' == partie.grille[8][2] && att == false) {
                             X = 5;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][2] && def == null) {
+                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][2] && att == false) {
                             X = 2;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************//**********************************************************/
-                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[3][1] &&  null == partie.grille[6][0]) {
+                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[3][1] &&  null == partie.grille[6][0] && att == false) {
                             X = 6;
                             Y = 0;
+                            att = true;
                     } else
-                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[3][1] &&  'cross' == partie.grille[6][0]) {
+                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[3][1] &&  'cross' == partie.grille[6][0] && att == false) {
                             X = 3;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][0]) {
+                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][0] && att == false) {
                             X = 0;
                             Y = 2;
+                            att = true;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[1][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[7][0]) {
+                    if ('cross' == partie.grille[1][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[7][0] && att == false) {
                             X = 7;
                             Y = 0;
+                            att = true;
                     } else 
-                    if ('cross' == partie.grille[1][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[7][0]) {
+                    if ('cross' == partie.grille[1][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[7][0] && att == false) {
                             X = 4;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[1][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][0]) {
+                    if (null == partie.grille[1][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][0] && att == false) {
                             X = 1;
                             Y = 2;
+                            att = true;
                     } else   
                     /**********************************************************/
-                    if ('cross' == partie.grille[2][2] &&  'cross' == partie.grille[5][1] &&  null == partie.grille[8][0]) {
+                    if ('cross' == partie.grille[2][2] &&  'cross' == partie.grille[5][1] &&  null == partie.grille[8][0] && att == false) {
                             X = 8;
                             Y = 0;
+                            att = true;
                     } else 
-                    if ('cross' == partie.grille[2][2] &&  null == partie.grille[5][1] &&  'cross' == partie.grille[8][0]) {
+                    if ('cross' == partie.grille[2][2] &&  null == partie.grille[5][1] &&  'cross' == partie.grille[8][0] && att == false) {
                             X = 5;
                             Y = 1;
+                            att = true;
                     } else 
-                    if (null == partie.grille[2][2] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][0]) {
+                    if (null == partie.grille[2][2] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][0] && att == false) {
                             X = 2;
                             Y = 2;
+                            att = true;
                     } else  
                     /**********************************************************/
                     /** Inter plateau colonnes */
-                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  null == partie.grille[8][0] && def == null) {
+                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  null == partie.grille[8][0] && att == false) {
                             X = 8;
                             Y = 0;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[4][0] &&  'cross' == partie.grille[8][0] && def == null) {
+                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[4][0] &&  'cross' == partie.grille[8][0] && att == false) {
                             X = 4;
                             Y = 0;
+                            att = true;
                     } else  
-                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[8][0] && def == null) {
+                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[8][0] && att == false) {
                             X = 0;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][1] && def == null) {
+                    if ('cross' == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][1] && att == false) {
                             X = 8;
                             Y = 1;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[0][1] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][1] && def == null) {
+                    if ('cross' == partie.grille[0][1] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][1] && att == false) {
                             X = 4;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][1] && def == null) {
+                    if (null == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][1] && att == false) {
                             X = 0;
                             Y = 1;
+                            att = true;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  null == partie.grille[8][2] && def == null) {
+                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  null == partie.grille[8][2] && att == false) {
                             X = 8;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[4][2] &&  'cross' == partie.grille[8][2] && def == null) {
+                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[4][2] &&  'cross' == partie.grille[8][2] && att == false) {
                             X = 4;
                             Y = 2;
+                            att = true;
                     } else 
-                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[8][2] && def == null) {
+                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[8][2] && att == false) {
                             X = 0;
                             Y = 2;
+                            att = true;
                     } else 
                     /**********************************************************//**********************************************************/
-                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[4][0] &&  null == partie.grille[6][0]) {
+                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[4][0] &&  null == partie.grille[6][0] && att == false) {
                             X = 6;
                             Y = 0;
+                            att = true;
                     } else 
-                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[4][0] &&  'cross' == partie.grille[6][0]) {
+                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[4][0] &&  'cross' == partie.grille[6][0] && att == false) {
                             X = 4;
                             Y = 0;
+                            att = true;
                     } else 
-                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[6][0]) {
+                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[6][0] && att == false) {
                             X = 2;
                             Y = 0;
+                            att = true;
                     } else 
                     /**********************************************************/
-                    if ('cross' == partie.grille[2][1] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[6][1]) {
+                    if ('cross' == partie.grille[2][1] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[6][1] && att == false) {
                             X = 6;
                             Y = 1;
+                            att = true;
                     } else 
-                    if ('cross' == partie.grille[2][1] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[6][1]) {
+                    if ('cross' == partie.grille[2][1] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[6][1] && att == false) {
                             X = 4;
                             Y = 1;
+                            att = true;
                     } else 
-                    if (null == partie.grille[2][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[6][1]) {
+                    if (null == partie.grille[2][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[6][1] && att == false) {
                             X = 2;
                             Y = 1;
+                            att = true;
                     } else 
                     /**********************************************************/
-                    if ('cross' == partie.grille[2][2] &&  'cross' == partie.grille[4][2] &&  null == partie.grille[6][2]) {
+                    if ('cross' == partie.grille[2][2] &&  'cross' == partie.grille[4][2] &&  null == partie.grille[6][2] && att == false) {
                             X = 6;
                             Y = 2;
+                            att = true;
                     } else 
-                    if ('cross' == partie.grille[2][2] &&  null == partie.grille[4][2] &&  'cross' == partie.grille[6][2]) {
+                    if ('cross' == partie.grille[2][2] &&  null == partie.grille[4][2] &&  'cross' == partie.grille[6][2] && att == false) {
                             X = 4;
                             Y = 2;
+                            att = true;
                     } else 
-                    if (null == partie.grille[2][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[6][2]) {
+                    if (null == partie.grille[2][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[6][2] && att == false) {
                             X = 2;
                             Y = 2;
+                            att = true;
                     } else 
                     /**********************************************************/
                     /** Inter plateau diagonales */
-                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][2] && def == null) {
+                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][2] && att == false) {
                             X = 8;
                             Y = 2;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][2] && def == null) {
+                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][2] && att == false) {
                             X = 4;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][2] && def == null) {
+                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][2] && att == false) {
                             X = 0;
                             Y = 0;
+                            att = true;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][0] && def == null) {
+                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][0] && att == false) {
                             X = 8;
                             Y = 0;
+                            att = true;
                     } else  
-                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][0] && def == null) {
+                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][0] && att == false) {
                             X = 4;
                             Y = 1;
+                            att = true;
                     } else  
-                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][0] && def == null) {
+                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][0] && att == false) {
                             X = 0;
                             Y = 2;
+                            att = true;
                     }
                 }
                 /** Coordonnee si attaque */
