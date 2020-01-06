@@ -47,9 +47,7 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'circle'; 
                     break;
                 }
-
-
-
+                //--------------------------------------------------------------------------------------
                 /** Plateau 2 */
                 if('circle' == partie.grille[i][3] &&  'circle' == partie.grille[i][4] &&  'circle' == partie.grille[i][5]){  
                     $('div#' + [i] + '_' + [3]).children(".forme.circle").css('display','none');
@@ -73,8 +71,7 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'circle'; 
                     break;
                 }
-
-
+                //--------------------------------------------------------------------------------------
                 /** Plateau 3 */
                 if('circle' == partie.grille[i][6] &&  'circle' == partie.grille[i][7] &&  'circle' == partie.grille[i][8]){  
                     $('div#' + [i] + '_' + [6]).children(".forme.circle").css('display','none');
@@ -99,9 +96,7 @@ $('document').ready(function(e){
                     partie.joueur_gagnant = 'circle'; 
                     break;
                 }
-
-
-
+                //--------------------------------------------------------------------------------------
                 /** Inter Plateau traverse */
                 if('circle' == partie.grille[0][i] &&  'circle' == partie.grille[3][i] &&  'circle' == partie.grille[6][i]){  
                     $('div#' + [0] + '_' + [i]).children(".forme.circle").css('display','none');
@@ -139,11 +134,7 @@ $('document').ready(function(e){
                     break;
                 }
             }
-
-
-
-
-
+            //--------------------------------------------------------------------------------------
             /** Plateau 1  diagonales */
             if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[1][1] &&  'circle' == partie.grille[2][2]){
                 $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
@@ -166,8 +157,7 @@ $('document').ready(function(e){
                 $('div#' + [0] + '_' + [2]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
-
-
+            //--------------------------------------------------------------------------------------
             /** Plateau 2  diagonales */
             if('circle' == partie.grille[3][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[5][2]){
                 $('div#' + [3] + '_' + [0]).children(".forme.circle").css('display','none');
@@ -190,8 +180,7 @@ $('document').ready(function(e){
                 $('div#' + [5] + '_' + [0]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
-
-
+            //--------------------------------------------------------------------------------------
             /** Plateau 3 diagonales */
             if('circle' == partie.grille[6][0] &&  'circle' == partie.grille[7][1] &&  'circle' == partie.grille[8][2]){
                 $('div#' + [6] + '_' + [0]).children(".forme.circle").css('display','none');
@@ -214,72 +203,7 @@ $('document').ready(function(e){
                 $('div#' + [8] + '_' + [0]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
-            
-
-
-            /** Inter Plateau lignes */
-            if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[3][1] &&  'circle' == partie.grille[6][2]){
-                $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
-                $('div#' + [3] + '_' + [1]).children(".forme.circle").css('display','none');
-                $('div#' + [6] + '_' + [2]).children(".forme.circle").css('display','none');
-
-                $('div#' + [0] + '_' + [0]).children(".forme.circleV").css('display','block');
-                $('div#' + [3] + '_' + [1]).children(".forme.circleV").css('display','block');
-                $('div#' + [6] + '_' + [2]).children(".forme.circleV").css('display','block');
-                partie.joueur_gagnant = 'circle';
-            }
-            if('circle' == partie.grille[1][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[7][2]){
-                $('div#' + [1] + '_' + [0]).children(".forme.circle").css('display','none');
-                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
-                $('div#' + [7] + '_' + [2]).children(".forme.circle").css('display','none');
-
-                $('div#' + [1] + '_' + [0]).children(".forme.circleV").css('display','block');
-                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
-                $('div#' + [7] + '_' + [2]).children(".forme.circleV").css('display','block');
-                partie.joueur_gagnant = 'circle';
-            }
-            if('circle' == partie.grille[2][0] &&  'circle' == partie.grille[5][1] &&  'circle' == partie.grille[8][2]){
-                $('div#' + [2] + '_' + [0]).children(".forme.circle").css('display','none');
-                $('div#' + [5] + '_' + [1]).children(".forme.circle").css('display','none');
-                $('div#' + [8] + '_' + [2]).children(".forme.circle").css('display','none');
-
-                $('div#' + [2] + '_' + [0]).children(".forme.circleV").css('display','block');
-                $('div#' + [5] + '_' + [1]).children(".forme.circleV").css('display','block');
-                $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
-                partie.joueur_gagnant = 'circle';
-            }
-            if('circle' == partie.grille[8][2] &&  'circle' == partie.grille[5][1] &&  'circle' == partie.grille[2][0]){
-                $('div#' + [8] + '_' + [2]).children(".forme.circle").css('display','none');
-                $('div#' + [5] + '_' + [1]).children(".forme.circle").css('display','none');
-                $('div#' + [2] + '_' + [0]).children(".forme.circle").css('display','none');
-
-                $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
-                $('div#' + [5] + '_' + [1]).children(".forme.circleV").css('display','block');
-                $('div#' + [2] + '_' + [0]).children(".forme.circleV").css('display','block');
-                partie.joueur_gagnant = 'circle';
-            }
-            if('circle' == partie.grille[7][2] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[1][0]){
-                $('div#' + [7] + '_' + [2]).children(".forme.circle").css('display','none');
-                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
-                $('div#' + [1] + '_' + [0]).children(".forme.circle").css('display','none');
-
-                $('div#' + [7] + '_' + [2]).children(".forme.circleV").css('display','block');
-                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
-                $('div#' + [1] + '_' + [0]).children(".forme.circleV").css('display','block');
-                partie.joueur_gagnant = 'circle';
-            }
-            if('circle' == partie.grille[6][0] &&  'circle' == partie.grille[1][1] &&  'circle' == partie.grille[2][0]){
-                $('div#' + [6] + '_' + [0]).children(".forme.circle").css('display','none');
-                $('div#' + [1] + '_' + [1]).children(".forme.circle").css('display','none');
-                $('div#' + [2] + '_' + [0]).children(".forme.circle").css('display','none');
-
-                $('div#' + [6] + '_' + [0]).children(".forme.circleV").css('display','block');
-                $('div#' + [1] + '_' + [1]).children(".forme.circleV").css('display','block');
-                $('div#' + [2] + '_' + [0]).children(".forme.circleV").css('display','block');
-                partie.joueur_gagnant = 'circle';
-            }
-
-
+            //--------------------------------------------------------------------------------------
             /** Inter Plateau colones */
             if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][0] &&  'circle' == partie.grille[8][0]){
                 $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
@@ -311,38 +235,101 @@ $('document').ready(function(e){
                 $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
-            if('circle' == partie.grille[8][0] &&  'circle' == partie.grille[4][0] &&  'circle' == partie.grille[2][0]){
-                $('div#' + [8] + '_' + [0]).children(".forme.circle").css('display','none');
-                $('div#' + [4] + '_' + [0]).children(".forme.circle").css('display','none');
+            //--------------------------------------------------------------------------------------
+            if('circle' == partie.grille[2][0] &&  'circle' == partie.grille[4][0] &&  'circle' == partie.grille[6][0]){
                 $('div#' + [2] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [6] + '_' + [0]).children(".forme.circle").css('display','none');
 
-                $('div#' + [8] + '_' + [0]).children(".forme.circleV").css('display','block');
-                $('div#' + [4] + '_' + [0]).children(".forme.circleV").css('display','block');
                 $('div#' + [2] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [6] + '_' + [0]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
-            if('circle' == partie.grille[8][1] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[2][1]){
-                $('div#' + [8] + '_' + [1]).children(".forme.circle").css('display','none');
-                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+            if('circle' == partie.grille[2][1] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[6][1]){
                 $('div#' + [2] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [6] + '_' + [1]).children(".forme.circle").css('display','none');
 
-                $('div#' + [8] + '_' + [1]).children(".forme.circleV").css('display','block');
-                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
                 $('div#' + [2] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [6] + '_' + [1]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
-            if('circle' == partie.grille[8][2] &&  'circle' == partie.grille[4][2] &&  'circle' == partie.grille[2][2]){
-                $('div#' + [8] + '_' + [2]).children(".forme.circle").css('display','none');
-                $('div#' + [4] + '_' + [2]).children(".forme.circle").css('display','none');
+            if('circle' == partie.grille[2][2] &&  'circle' == partie.grille[4][2] &&  'circle' == partie.grille[6][2]){
                 $('div#' + [2] + '_' + [2]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [2]).children(".forme.circle").css('display','none');
+                $('div#' + [6] + '_' + [2]).children(".forme.circle").css('display','none');
 
-                $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
-                $('div#' + [4] + '_' + [2]).children(".forme.circleV").css('display','block');
                 $('div#' + [2] + '_' + [2]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [2]).children(".forme.circleV").css('display','block');
+                $('div#' + [6] + '_' + [2]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }            
+            //--------------------------------------------------------------------------------------
+            /** Inter Plateau lignes */
+            if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[3][1] &&  'circle' == partie.grille[6][2]){
+                $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [3] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [6] + '_' + [2]).children(".forme.circle").css('display','none');
+
+                $('div#' + [0] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [3] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [6] + '_' + [2]).children(".forme.circleV").css('display','block');
                 partie.joueur_gagnant = 'circle';
             }
+            if('circle' == partie.grille[1][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[7][2]){
+                $('div#' + [1] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [7] + '_' + [2]).children(".forme.circle").css('display','none');
 
+                $('div#' + [1] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [7] + '_' + [2]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('circle' == partie.grille[2][0] &&  'circle' == partie.grille[5][1] &&  'circle' == partie.grille[8][2]){
+                $('div#' + [2] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [5] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [2]).children(".forme.circle").css('display','none');
 
+                $('div#' + [2] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [5] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [2]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            //--------------------------------------------------------------------------------------
+            if('circle' == partie.grille[0][2] &&  'circle' == partie.grille[3][1] &&  'circle' == partie.grille[6][0]){
+                $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
+                $('div#' + [3] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [6] + '_' + [2]).children(".forme.circle").css('display','none');
+
+                $('div#' + [0] + '_' + [0]).children(".forme.circleV").css('display','block');
+                $('div#' + [3] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [6] + '_' + [2]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('circle' == partie.grille[1][2] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[7][0]){
+                $('div#' + [1] + '_' + [2]).children(".forme.circle").css('display','none');
+                $('div#' + [4] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [7] + '_' + [0]).children(".forme.circle").css('display','none');
+
+                $('div#' + [1] + '_' + [2]).children(".forme.circleV").css('display','block');
+                $('div#' + [4] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [7] + '_' + [0]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            if('circle' == partie.grille[2][2] &&  'circle' == partie.grille[5][1] &&  'circle' == partie.grille[8][0]){
+                $('div#' + [2] + '_' + [2]).children(".forme.circle").css('display','none');
+                $('div#' + [5] + '_' + [1]).children(".forme.circle").css('display','none');
+                $('div#' + [8] + '_' + [0]).children(".forme.circle").css('display','none');
+
+                $('div#' + [2] + '_' + [2]).children(".forme.circleV").css('display','block');
+                $('div#' + [5] + '_' + [1]).children(".forme.circleV").css('display','block');
+                $('div#' + [8] + '_' + [0]).children(".forme.circleV").css('display','block');
+                partie.joueur_gagnant = 'circle';
+            }
+            //--------------------------------------------------------------------------------------
             /** Inter Plateau diagonales */
             if('circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[8][2]){
                 $('div#' + [0] + '_' + [0]).children(".forme.circle").css('display','none');
@@ -378,13 +365,9 @@ $('document').ready(function(e){
                 function getRandomInt(max) {
                     return Math.floor(Math.random() * Math.floor(max));
                 }
-                /**
-                 * 
-                 * 
+                /****************************************************************************
                  * DEFENSE
-                 * 
-                 * 
-                 */
+                 ****************************************************************************/
 
                 let def = null;
                 let X = null;
@@ -855,6 +838,81 @@ $('document').ready(function(e){
 
                     } 
                 } else  
+                /**********************************************************//**********************************************************/
+                if ('circle' == partie.grille[0][2] &&  'circle' == partie.grille[3][1] &&  null == partie.grille[6][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 6;
+                        Y = 0;
+
+                    } 
+                } else
+                if ('circle' == partie.grille[0][2] &&  null == partie.grille[3][1] &&  'circle' == partie.grille[6][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 3;
+                        Y = 1;
+
+                    } 
+                } else  
+                if (null == partie.grille[0][2] &&  'circle' == partie.grille[3][1] &&  'circle' == partie.grille[6][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 0;
+                        Y = 2;
+
+                    } 
+                } else  
+                /**********************************************************/
+                if ('circle' == partie.grille[1][2] &&  'circle' == partie.grille[4][1] &&  null == partie.grille[7][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 7;
+                        Y = 0;
+
+                    } 
+                } else 
+                if ('circle' == partie.grille[1][2] &&  null == partie.grille[4][1] &&  'circle' == partie.grille[7][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 4;
+                        Y = 1;
+
+                    } 
+                } else  
+                if (null == partie.grille[1][2] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[7][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 1;
+                        Y = 2;
+
+                    } 
+                } else   
+                /**********************************************************/
+                if ('circle' == partie.grille[2][2] &&  'circle' == partie.grille[5][1] &&  null == partie.grille[8][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 8;
+                        Y = 0;
+
+                    } 
+                } else 
+                if ('circle' == partie.grille[2][2] &&  null == partie.grille[5][1] &&  'circle' == partie.grille[8][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 5;
+                        Y = 1;
+
+                    } 
+                } else 
+                if (null == partie.grille[2][2] &&  'circle' == partie.grille[5][1] &&  'circle' == partie.grille[8][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 2;
+                        Y = 2;
+
+                    } 
+                } else  
                 /**********************************************************/
                 /** Inter plateau colonnes */
                 if ('circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][0] &&  null == partie.grille[8][0] && def == null) {
@@ -931,6 +989,81 @@ $('document').ready(function(e){
 
                     } 
                 } else 
+                /**********************************************************//**********************************************************/
+                if ('circle' == partie.grille[2][0] &&  'circle' == partie.grille[4][0] &&  null == partie.grille[6][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 6;
+                        Y = 0;
+
+                    } 
+                } else 
+                if ('circle' == partie.grille[2][0] &&  null == partie.grille[4][0] &&  'circle' == partie.grille[6][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 4;
+                        Y = 0;
+
+                    } 
+                } else 
+                if (null == partie.grille[2][0] &&  'circle' == partie.grille[4][0] &&  'circle' == partie.grille[6][0]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 2;
+                        Y = 0;
+
+                    } 
+                } else 
+                /**********************************************************/
+                if ('circle' == partie.grille[2][1] &&  'circle' == partie.grille[4][1] &&  null == partie.grille[6][1]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 6;
+                        Y = 1;
+
+                    } 
+                } else 
+                if ('circle' == partie.grille[2][1] &&  null == partie.grille[4][1] &&  'circle' == partie.grille[6][1]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 4;
+                        Y = 1;
+
+                    } 
+                } else 
+                if (null == partie.grille[2][1] &&  'circle' == partie.grille[4][1] &&  'circle' == partie.grille[6][1]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 2;
+                        Y = 1;
+
+                    } 
+                } else 
+                /**********************************************************/
+                if ('circle' == partie.grille[2][2] &&  'circle' == partie.grille[4][2] &&  null == partie.grille[6][2]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 6;
+                        Y = 2;
+
+                    } 
+                } else 
+                if ('circle' == partie.grille[2][2] &&  null == partie.grille[4][2] &&  'circle' == partie.grille[6][2]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 4;
+                        Y = 2;
+
+                    } 
+                } else 
+                if (null == partie.grille[2][2] &&  'circle' == partie.grille[4][2] &&  'circle' == partie.grille[6][2]) {
+                    def = getRandomInt(3);
+                    if (def == 0 || def == 1) {
+                        X = 2;
+                        Y = 2;
+
+                    } 
+                } else 
                 /**********************************************************/
                 /** Inter plateau diagonales */
                 if ('circle' == partie.grille[0][0] &&  'circle' == partie.grille[4][1] &&  null == partie.grille[8][2] && def == null) {
@@ -987,465 +1120,398 @@ $('document').ready(function(e){
                     console.log('Def X: ', X);
                     console.log('Def Y: ', Y);
                 } 
-                /**
-                 * 
-                 * 
+                /**************************************************************************** 
                  * ATTAQUE
-                 * 
-                 * 
-                 */
+                 ****************************************************************************/
                 let att = false;
                 
                 if ( def == null || def == 2){
                     for(let i=0;i<9;i++){
                         /** Plateau 1 */
-                        if ('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  null == partie.grille[i][2] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  null == partie.grille[i][2] && def == null) {
                                 X = i;
-                                Y = 2;     
+                                Y = 2;
                         } else 
-                        if ('cross' == partie.grille[i][0] &&  null == partie.grille[i][1] &&  'cross' == partie.grille[i][2] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[i][0] &&  null == partie.grille[i][1] &&  'cross' == partie.grille[i][2] && def == null) {
                                 X = i;
                                 Y = 1;
                         } else 
-                        if (null == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2] && def == null) {
                                 X = i;
                                 Y = 0;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  null == partie.grille[2][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  null == partie.grille[2][i] && def == null) {
                                 X = 2;
                                 Y = i;
                         } else 
-                        if ('cross' == partie.grille[0][i] &&  null == partie.grille[1][i] &&  'cross' == partie.grille[2][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[0][i] &&  null == partie.grille[1][i] &&  'cross' == partie.grille[2][i] && def == null) {
                                 X = 1;
                                 Y = i;
                         } else 
-                        if (null == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  'cross' == partie.grille[2][i] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  'cross' == partie.grille[2][i] && def == null) {
                                 X = 0;
                                 Y = i;
                         } else 
                         /**********************************************************/
                         /** Plateau 2 */
-                        if ('cross' == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  null == partie.grille[i][5] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  null == partie.grille[i][5] && def == null) {
                                 X = i;
                                 Y = 5;
                         } else 
-                        if ('cross' == partie.grille[i][3] &&  null == partie.grille[i][4] &&  'cross' == partie.grille[i][5] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[i][3] &&  null == partie.grille[i][4] &&  'cross' == partie.grille[i][5] && def == null) {
                                 X = i;
                                 Y = 4;
                         } else 
-                        if (null == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  'cross' == partie.grille[i][5] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  'cross' == partie.grille[i][5] && def == null) {
                                 X = i;
                                 Y = 3;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  null == partie.grille[5][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  null == partie.grille[5][i] && def == null) {
                                 X = 5;
                                 Y = i;
                         } else 
-                        if ('cross' == partie.grille[3][i] &&  null == partie.grille[4][i] &&  'cross' == partie.grille[5][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[3][i] &&  null == partie.grille[4][i] &&  'cross' == partie.grille[5][i] && def == null) {
                                 X = 4;
                                 Y = i;
                         } else 
-                        if (null == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[5][i] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[5][i] && def == null) {
                                 X = 3;
                                 Y = i;
                         } else 
                         /**********************************************************/
                         /** Plateau 3 */
-                        if ('cross' == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  null == partie.grille[i][8] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  null == partie.grille[i][8] && def == null) {
                                 X = i;
                                 Y = 8;
                         } else 
-                        if ('cross' == partie.grille[i][6] &&  null == partie.grille[i][7] &&  'cross' == partie.grille[i][8] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[i][6] &&  null == partie.grille[i][7] &&  'cross' == partie.grille[i][8] && def == null) {
                                 X = i;
                                 Y = 7;
                         } else 
-                        if (null == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  'cross' == partie.grille[i][8] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  'cross' == partie.grille[i][8] && def == null) {
                                 X = i;
                                 Y = 6;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  null == partie.grille[8][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  null == partie.grille[8][i] && def == null) {
                                 X = 8;
                                 Y = i;
                         } else 
-                        if ('cross' == partie.grille[6][i] &&  null == partie.grille[7][i] &&  'cross' == partie.grille[8][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[6][i] &&  null == partie.grille[7][i] &&  'cross' == partie.grille[8][i] && def == null) {
                                 X = 7;
                                 Y = i;
                         } else 
-                        if (null == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  'cross' == partie.grille[8][i] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  'cross' == partie.grille[8][i] && def == null) {
                                 X = 6;
                                 Y = i;
                         } else 
                         /**********************************************************/
                         /** Inter Plateau Traverse */
-                        if ('cross' == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  null == partie.grille[6][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  null == partie.grille[6][i] && def == null) {
                                 X = 6;
                                 Y = i;
                         } else 
-                        if ('cross' == partie.grille[0][i] &&  null == partie.grille[3][i] &&  'cross' == partie.grille[6][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[0][i] &&  null == partie.grille[3][i] &&  'cross' == partie.grille[6][i] && def == null) {
                                 X = 3;
                                 Y = i;
                         } else 
-                        if (null == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  'cross' == partie.grille[6][i] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  'cross' == partie.grille[6][i] && def == null) {
                                 X = 0;
                                 Y = i;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  null == partie.grille[7][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  null == partie.grille[7][i] && def == null) {
                                 X = 7;
                                 Y = i;
                         } else 
-                        if ('cross' == partie.grille[1][i] &&  null == partie.grille[4][i] &&  'cross' == partie.grille[7][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[1][i] &&  null == partie.grille[4][i] &&  'cross' == partie.grille[7][i] && def == null) {
                                 X = 4;
                                 Y = i;
                         } else 
-                        if (null == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[7][i] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[7][i] && def == null) {
                                 X = 1;
                                 Y = i;
                         } else 
                         /**********************************************************/
-                        if ('cross' == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  null == partie.grille[8][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  null == partie.grille[8][i] && def == null) {
                                 X = 8;
                                 Y = i;
                         } else 
-                        if ('cross' == partie.grille[2][i] &&  null == partie.grille[5][i] &&  'cross' == partie.grille[8][i] && att == false) {
-                            att = true;
-                            
+                        if ('cross' == partie.grille[2][i] &&  null == partie.grille[5][i] &&  'cross' == partie.grille[8][i] && def == null) {
                                 X = 5;
                                 Y = i;
                         } else 
-                        if (null == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  'cross' == partie.grille[8][i] && att == false) {
-                            att = true;
-                            
+                        if (null == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  'cross' == partie.grille[8][i] && def == null) {
                                 X = 2;
                                 Y = i;
                         } 
                     } //End for
-        
-        
-        
-        
-        
-                    /**********************************************************/
+
+                    /**********************************************************//**********************************************************/
                     /** Plateau 1 diagonales */
-                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  null == partie.grille[2][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  null == partie.grille[2][2] && def == null) {
                             X = 2;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[1][1] &&  'cross' == partie.grille[2][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[1][1] &&  'cross' == partie.grille[2][2] && def == null) {
                             X = 1;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[2][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[2][2] && def == null) {
                             X = 0;
                             Y = 0;
                     } else  
                     /**********************************************************/                   
-                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[1][1] &&  null == partie.grille[0][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[1][1] &&  null == partie.grille[0][2] && def == null) {
                             X = 0;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[1][1] &&  'cross' == partie.grille[0][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[1][1] &&  'cross' == partie.grille[0][2] && def == null) {
                             X = 1;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[0][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[0][2] && def == null) {
                             X = 2;
                             Y = 0;
                     } else  
                     /**********************************************************/
                     /** Plateau 2 diagonales */
-                    if ('cross' == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[5][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[5][2] && def == null) {
                             X = 5;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[3][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[5][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[3][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[5][2] && def == null) {
                             X = 4;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][2] && def == null) {
                             X = 3;
                             Y = 0;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[5][0] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[5][0] && def == null) {
                             X = 5;
                             Y = 0;
                     } else  
-                    if ('cross' == partie.grille[3][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[5][0] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[3][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[5][0] && def == null) {
                             X = 4;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][0] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[3][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][0] && def == null) {
                             X = 3;
                             Y = 2;
                     } else  
                     /**********************************************************/
                     /** Plateau 3 diagonales */
-                    if ('cross' == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  null == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  null == partie.grille[8][2] && def == null) {
                             X = 8;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[6][0] &&  null == partie.grille[7][1] &&  'cross' == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[6][0] &&  null == partie.grille[7][1] &&  'cross' == partie.grille[8][2] && def == null) {
                             X = 7;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][2] && def == null) {
                             X = 6;
                             Y = 0;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  null == partie.grille[8][0] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  null == partie.grille[8][0] && def == null) {
                             X = 8;
                             Y = 0;
                     } else  
-                    if ('cross' == partie.grille[6][2] &&  null == partie.grille[7][1] &&  'cross' == partie.grille[8][0] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[6][2] &&  null == partie.grille[7][1] &&  'cross' == partie.grille[8][0] && def == null) {
                             X = 7;
                             Y = 1;
                     } else 
-                    if (null == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][0] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[6][2] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][0] && def == null) {
                             X = 6;
                             Y = 2;
                     } else 
                     /**********************************************************/
                     /** Inter Plateau ligne */
-                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  null == partie.grille[6][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  null == partie.grille[6][2] && def == null) {
                             X = 6;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[3][1] &&  'cross' == partie.grille[6][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[3][1] &&  'cross' == partie.grille[6][2] && def == null) {
                             X = 3;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][2] && def == null) {
                             X = 0;
                             Y = 0;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[7][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[7][2] && def == null) {
                             X = 7;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[1][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[7][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[1][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[7][2] && def == null) {
                             X = 4;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][2] && def == null) {
                             X = 1;
                             Y = 0;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  null == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  null == partie.grille[8][2] && def == null) {
                             X = 8;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[5][1] &&  'cross' == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[5][1] &&  'cross' == partie.grille[8][2] && def == null) {
                             X = 5;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][2] && def == null) {
                             X = 2;
                             Y = 0;
                     } else  
+                    /**********************************************************//**********************************************************/
+                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[3][1] &&  null == partie.grille[6][0]) {
+                            X = 6;
+                            Y = 0;
+                    } else
+                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[3][1] &&  'cross' == partie.grille[6][0]) {
+                            X = 3;
+                            Y = 1;
+                    } else  
+                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][0]) {
+                            X = 0;
+                            Y = 2;
+                    } else  
+                    /**********************************************************/
+                    if ('cross' == partie.grille[1][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[7][0]) {
+                            X = 7;
+                            Y = 0;
+                    } else 
+                    if ('cross' == partie.grille[1][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[7][0]) {
+                            X = 4;
+                            Y = 1;
+                    } else  
+                    if (null == partie.grille[1][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][0]) {
+                            X = 1;
+                            Y = 2;
+                    } else   
+                    /**********************************************************/
+                    if ('cross' == partie.grille[2][2] &&  'cross' == partie.grille[5][1] &&  null == partie.grille[8][0]) {
+                            X = 8;
+                            Y = 0;
+                    } else 
+                    if ('cross' == partie.grille[2][2] &&  null == partie.grille[5][1] &&  'cross' == partie.grille[8][0]) {
+                            X = 5;
+                            Y = 1;
+                    } else 
+                    if (null == partie.grille[2][2] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][0]) {
+                            X = 2;
+                            Y = 2;
+                    } else  
                     /**********************************************************/
                     /** Inter plateau colonnes */
-                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  null == partie.grille[8][0] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  null == partie.grille[8][0] && def == null) {
                             X = 8;
                             Y = 0;
                     } else  
-                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[4][0] &&  'cross' == partie.grille[8][0] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[4][0] &&  'cross' == partie.grille[8][0] && def == null) {
                             X = 4;
                             Y = 0;
                     } else  
-                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[8][0] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[8][0] && def == null) {
                             X = 0;
                             Y = 0;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][1] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][1] && def == null) {
                             X = 8;
                             Y = 1;
                     } else  
-                    if ('cross' == partie.grille[0][1] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][1] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][1] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][1] && def == null) {
                             X = 4;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][1] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[0][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][1] && def == null) {
                             X = 0;
                             Y = 1;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  null == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  null == partie.grille[8][2] && def == null) {
                             X = 8;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[4][2] &&  'cross' == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[4][2] &&  'cross' == partie.grille[8][2] && def == null) {
                             X = 4;
                             Y = 2;
                     } else 
-                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[8][2] && def == null) {
                             X = 0;
+                            Y = 2;
+                    } else 
+                    /**********************************************************//**********************************************************/
+                    if ('cross' == partie.grille[2][0] &&  'cross' == partie.grille[4][0] &&  null == partie.grille[6][0]) {
+                            X = 6;
+                            Y = 0;
+                    } else 
+                    if ('cross' == partie.grille[2][0] &&  null == partie.grille[4][0] &&  'cross' == partie.grille[6][0]) {
+                            X = 4;
+                            Y = 0;
+                    } else 
+                    if (null == partie.grille[2][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[6][0]) {
+                            X = 2;
+                            Y = 0;
+                    } else 
+                    /**********************************************************/
+                    if ('cross' == partie.grille[2][1] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[6][1]) {
+                            X = 6;
+                            Y = 1;
+                    } else 
+                    if ('cross' == partie.grille[2][1] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[6][1]) {
+                            X = 4;
+                            Y = 1;
+                    } else 
+                    if (null == partie.grille[2][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[6][1]) {
+                            X = 2;
+                            Y = 1;
+                    } else 
+                    /**********************************************************/
+                    if ('cross' == partie.grille[2][2] &&  'cross' == partie.grille[4][2] &&  null == partie.grille[6][2]) {
+                            X = 6;
+                            Y = 2;
+                    } else 
+                    if ('cross' == partie.grille[2][2] &&  null == partie.grille[4][2] &&  'cross' == partie.grille[6][2]) {
+                            X = 4;
+                            Y = 2;
+                    } else 
+                    if (null == partie.grille[2][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[6][2]) {
+                            X = 2;
                             Y = 2;
                     } else 
                     /**********************************************************/
                     /** Inter plateau diagonales */
-                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][2] && def == null) {
                             X = 8;
                             Y = 2;
                     } else  
-                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][0] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][2] && def == null) {
                             X = 4;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][2] && att == false) {
-                        att = true;
-                        
+                    if (null == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][2] && def == null) {
                             X = 0;
                             Y = 0;
                     } else  
                     /**********************************************************/
-                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][0] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][2] &&  'cross' == partie.grille[4][1] &&  null == partie.grille[8][0] && def == null) {
                             X = 8;
                             Y = 0;
                     } else  
-                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][0] && att == false) {
-                        att = true;
-                        
+                    if ('cross' == partie.grille[0][2] &&  null == partie.grille[4][1] &&  'cross' == partie.grille[8][0] && def == null) {
                             X = 4;
                             Y = 1;
                     } else  
-                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][0] && att == false) {
-                        att = true;
+                    if (null == partie.grille[0][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][0] && def == null) {
                             X = 0;
                             Y = 2;
                     }
@@ -1457,12 +1523,9 @@ $('document').ready(function(e){
                     console.log('Att Y: ', Y); 
                 }
 
-                /**
-                * 
-                * 
+                /****************************************************************************
                 * STRATEGIE
-                * 
-                */
+                ****************************************************************************/
                 let strat = false;
                 let luck = null;
 
@@ -1724,13 +1787,9 @@ $('document').ready(function(e){
 
                 joueur_suivant = "circle";
                 $(".infos .tour .forme").toggle();
-                /**
-                * 
-                * 
+                /****************************************************************************
                 * VICTOIRE
-                * 
-                * 
-                */
+                ****************************************************************************/
 
                 // tester si la combinaison est gagnante
                 /** Alors ici j'ai remplacer la var joueur courant car il n'y a plus de switch case. Je commence toujours par le cercle car si c'est
@@ -1739,126 +1798,117 @@ $('document').ready(function(e){
                 */
 
                for(let i=0;i<9;i++){
-                /** Plateau 1 */
-                if('cross' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2]){  
-                    $('div#' + [i] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [2]).children(".forme.cross").css('display','none');
+                    /** Plateau 1 */
+                    if('circle' == partie.grille[i][0] &&  'cross' == partie.grille[i][1] &&  'cross' == partie.grille[i][2]){  
+                        $('div#' + [i] + '_' + [0]).children(".forme.cross").css('display','none');
+                        $('div#' + [i] + '_' + [1]).children(".forme.cross").css('display','none');
+                        $('div#' + [i] + '_' + [2]).children(".forme.cross").css('display','none');
 
-                    $('div#' + [i] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [2]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                    break;
+                        $('div#' + [i] + '_' + [0]).children(".forme.crossV").css('display','block');
+                        $('div#' + [i] + '_' + [1]).children(".forme.crossV").css('display','block');
+                        $('div#' + [i] + '_' + [2]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross';
+                        break;
+                    }
+                    if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  'cross' == partie.grille[2][i]){
+                        $('div#' + [0] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [1] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [2] + '_' + [i]).children(".forme.cross").css('display','none');
+
+                        $('div#' + [0] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [1] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [2] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross'; 
+                        break;
+                    }
+                    //--------------------------------------------------------------------------------------
+                    /** Plateau 2 */
+                    if('cross' == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  'cross' == partie.grille[i][5]){  
+                        $('div#' + [i] + '_' + [3]).children(".forme.cross").css('display','none');
+                        $('div#' + [i] + '_' + [4]).children(".forme.cross").css('display','none');
+                        $('div#' + [i] + '_' + [5]).children(".forme.cross").css('display','none');
+
+                        $('div#' + [i] + '_' + [3]).children(".forme.crossV").css('display','block');
+                        $('div#' + [i] + '_' + [4]).children(".forme.crossV").css('display','block');
+                        $('div#' + [i] + '_' + [5]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross';
+                        break;
+                    }
+                    if('cross' == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[5][i]){
+                        $('div#' + [3] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [4] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [5] + '_' + [i]).children(".forme.cross").css('display','none');
+
+                        $('div#' + [3] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [4] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [5] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross'; 
+                        break;
+                    }
+                    //--------------------------------------------------------------------------------------
+                    /** Plateau 3 */
+                    if('cross' == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  'cross' == partie.grille[i][8]){  
+                        $('div#' + [i] + '_' + [6]).children(".forme.cross").css('display','none');
+                        $('div#' + [i] + '_' + [7]).children(".forme.cross").css('display','none');
+                        $('div#' + [i] + '_' + [8]).children(".forme.cross").css('display','none');
+
+                        $('div#' + [i] + '_' + [6]).children(".forme.crossV").css('display','block');
+                        $('div#' + [i] + '_' + [7]).children(".forme.crossV").css('display','block');
+                        $('div#' + [i] + '_' + [8]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross';
+                        break;
+                    }
+
+                    if('cross' == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  'cross' == partie.grille[8][i]){
+                        $('div#' + [6] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [7] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [8] + '_' + [i]).children(".forme.cross").css('display','none');
+
+                        $('div#' + [6] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [7] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [8] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross'; 
+                        break;
+                    }
+                    //--------------------------------------------------------------------------------------
+                    /** Inter Plateau traverse */
+                    if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  'cross' == partie.grille[6][i]){  
+                        $('div#' + [0] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [3] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [6] + '_' + [i]).children(".forme.cross").css('display','none');
+
+                        $('div#' + [0] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [3] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [6] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross';
+                        break;
+                    }
+
+                    if('cross' == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[7][i]){  
+                        $('div#' + [1] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [4] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [7] + '_' + [i]).children(".forme.cross").css('display','none');
+
+                        $('div#' + [1] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [4] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [7] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross';
+                        break;
+                    }
+
+                    if('cross' == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  'cross' == partie.grille[8][i]){  
+                        $('div#' + [2] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [5] + '_' + [i]).children(".forme.cross").css('display','none');
+                        $('div#' + [8] + '_' + [i]).children(".forme.cross").css('display','none');
+
+                        $('div#' + [2] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [5] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        $('div#' + [8] + '_' + [i]).children(".forme.crossV").css('display','block');
+                        partie.joueur_gagnant = 'cross';
+                        break;
+                    }
                 }
-                if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[1][i] &&  'cross' == partie.grille[2][i]){
-                    $('div#' + [0] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [1] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [2] + '_' + [i]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [0] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [1] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [2] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross'; 
-                    break;
-                }
-
-
-
-                /** Plateau 2 */
-                if('cross' == partie.grille[i][3] &&  'cross' == partie.grille[i][4] &&  'cross' == partie.grille[i][5]){  
-                    $('div#' + [i] + '_' + [3]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [4]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [5]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [i] + '_' + [3]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [4]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [5]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                    break;
-                }
-                if('cross' == partie.grille[3][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[5][i]){
-                    $('div#' + [3] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [4] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [5] + '_' + [i]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [3] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [4] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [5] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross'; 
-                    break;
-                }
-
-
-                /** Plateau 3 */
-                if('cross' == partie.grille[i][6] &&  'cross' == partie.grille[i][7] &&  'cross' == partie.grille[i][8]){  
-                    $('div#' + [i] + '_' + [6]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [7]).children(".forme.cross").css('display','none');
-                    $('div#' + [i] + '_' + [8]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [i] + '_' + [6]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [7]).children(".forme.crossV").css('display','block');
-                    $('div#' + [i] + '_' + [8]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                    break;
-                }
-
-                if('cross' == partie.grille[6][i] &&  'cross' == partie.grille[7][i] &&  'cross' == partie.grille[8][i]){
-                    $('div#' + [6] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [7] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [8] + '_' + [i]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [6] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [7] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [8] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross'; 
-                    break;
-                }
-
-
-
-                /** Inter Plateau traverse */
-                if('cross' == partie.grille[0][i] &&  'cross' == partie.grille[3][i] &&  'cross' == partie.grille[6][i]){  
-                    $('div#' + [0] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [3] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [6] + '_' + [i]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [0] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [3] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [6] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                    break;
-                }
-
-                if('cross' == partie.grille[1][i] &&  'cross' == partie.grille[4][i] &&  'cross' == partie.grille[7][i]){  
-                    $('div#' + [1] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [4] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [7] + '_' + [i]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [1] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [4] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [7] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                    break;
-                }
-
-                if('cross' == partie.grille[2][i] &&  'cross' == partie.grille[5][i] &&  'cross' == partie.grille[8][i]){  
-                    $('div#' + [2] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [5] + '_' + [i]).children(".forme.cross").css('display','none');
-                    $('div#' + [8] + '_' + [i]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [2] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [5] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    $('div#' + [8] + '_' + [i]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                    break;
-                }
-            }
-
-
-
-
-
+                //--------------------------------------------------------------------------------------
                 /** Plateau 1  diagonales */
                 if('cross' == partie.grille[0][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[2][2]){
                     $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
@@ -1881,8 +1931,7 @@ $('document').ready(function(e){
                     $('div#' + [0] + '_' + [2]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
-
-
+                //--------------------------------------------------------------------------------------
                 /** Plateau 2  diagonales */
                 if('cross' == partie.grille[3][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[5][2]){
                     $('div#' + [3] + '_' + [0]).children(".forme.cross").css('display','none');
@@ -1905,8 +1954,7 @@ $('document').ready(function(e){
                     $('div#' + [5] + '_' + [0]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
-
-
+                //--------------------------------------------------------------------------------------
                 /** Plateau 3 diagonales */
                 if('cross' == partie.grille[6][0] &&  'cross' == partie.grille[7][1] &&  'cross' == partie.grille[8][2]){
                     $('div#' + [6] + '_' + [0]).children(".forme.cross").css('display','none');
@@ -1929,72 +1977,7 @@ $('document').ready(function(e){
                     $('div#' + [8] + '_' + [0]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
-                
-
-
-                /** Inter Plateau lignes */
-                if('cross' == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][2]){
-                    $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [3] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [6] + '_' + [2]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [0] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [3] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [6] + '_' + [2]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                }
-                if('cross' == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][2]){
-                    $('div#' + [1] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [7] + '_' + [2]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [1] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [7] + '_' + [2]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                }
-                if('cross' == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][2]){
-                    $('div#' + [2] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [5] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [8] + '_' + [2]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [2] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [5] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [8] + '_' + [2]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                }
-                if('cross' == partie.grille[8][2] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[2][0]){
-                    $('div#' + [8] + '_' + [2]).children(".forme.cross").css('display','none');
-                    $('div#' + [5] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [2] + '_' + [0]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [8] + '_' + [2]).children(".forme.crossV").css('display','block');
-                    $('div#' + [5] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [2] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                }
-                if('cross' == partie.grille[7][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[1][0]){
-                    $('div#' + [7] + '_' + [2]).children(".forme.cross").css('display','none');
-                    $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [1] + '_' + [0]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [7] + '_' + [2]).children(".forme.crossV").css('display','block');
-                    $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [1] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                }
-                if('cross' == partie.grille[6][0] &&  'cross' == partie.grille[1][1] &&  'cross' == partie.grille[2][0]){
-                    $('div#' + [6] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [1] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [2] + '_' + [0]).children(".forme.cross").css('display','none');
-
-                    $('div#' + [6] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [1] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [2] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    partie.joueur_gagnant = 'cross';
-                }
-
-
+                //--------------------------------------------------------------------------------------
                 /** Inter Plateau colones */
                 if('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[8][0]){
                     $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
@@ -2026,38 +2009,101 @@ $('document').ready(function(e){
                     $('div#' + [8] + '_' + [2]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
-                if('cross' == partie.grille[8][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[2][0]){
-                    $('div#' + [8] + '_' + [0]).children(".forme.cross").css('display','none');
-                    $('div#' + [4] + '_' + [0]).children(".forme.cross").css('display','none');
+                //--------------------------------------------------------------------------------------
+                if('cross' == partie.grille[2][0] &&  'cross' == partie.grille[4][0] &&  'cross' == partie.grille[6][0]){
                     $('div#' + [2] + '_' + [0]).children(".forme.cross").css('display','none');
+                    $('div#' + [4] + '_' + [0]).children(".forme.cross").css('display','none');
+                    $('div#' + [6] + '_' + [0]).children(".forme.cross").css('display','none');
 
-                    $('div#' + [8] + '_' + [0]).children(".forme.crossV").css('display','block');
-                    $('div#' + [4] + '_' + [0]).children(".forme.crossV").css('display','block');
                     $('div#' + [2] + '_' + [0]).children(".forme.crossV").css('display','block');
+                    $('div#' + [4] + '_' + [0]).children(".forme.crossV").css('display','block');
+                    $('div#' + [6] + '_' + [0]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
-                if('cross' == partie.grille[8][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[2][1]){
-                    $('div#' + [8] + '_' + [1]).children(".forme.cross").css('display','none');
-                    $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
+                if('cross' == partie.grille[2][1] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[6][1]){
                     $('div#' + [2] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [6] + '_' + [1]).children(".forme.cross").css('display','none');
 
-                    $('div#' + [8] + '_' + [1]).children(".forme.crossV").css('display','block');
-                    $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
                     $('div#' + [2] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [6] + '_' + [1]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
-                if('cross' == partie.grille[8][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[2][2]){
-                    $('div#' + [8] + '_' + [2]).children(".forme.cross").css('display','none');
-                    $('div#' + [4] + '_' + [2]).children(".forme.cross").css('display','none');
+                if('cross' == partie.grille[2][2] &&  'cross' == partie.grille[4][2] &&  'cross' == partie.grille[6][2]){
                     $('div#' + [2] + '_' + [2]).children(".forme.cross").css('display','none');
+                    $('div#' + [4] + '_' + [2]).children(".forme.cross").css('display','none');
+                    $('div#' + [6] + '_' + [2]).children(".forme.cross").css('display','none');
 
-                    $('div#' + [8] + '_' + [2]).children(".forme.crossV").css('display','block');
-                    $('div#' + [4] + '_' + [2]).children(".forme.crossV").css('display','block');
                     $('div#' + [2] + '_' + [2]).children(".forme.crossV").css('display','block');
+                    $('div#' + [4] + '_' + [2]).children(".forme.crossV").css('display','block');
+                    $('div#' + [6] + '_' + [2]).children(".forme.crossV").css('display','block');
+                    partie.joueur_gagnant = 'cross';
+                }            
+                //--------------------------------------------------------------------------------------
+                /** Inter Plateau lignes */
+                if('cross' == partie.grille[0][0] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][2]){
+                    $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
+                    $('div#' + [3] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [6] + '_' + [2]).children(".forme.cross").css('display','none');
+
+                    $('div#' + [0] + '_' + [0]).children(".forme.crossV").css('display','block');
+                    $('div#' + [3] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [6] + '_' + [2]).children(".forme.crossV").css('display','block');
                     partie.joueur_gagnant = 'cross';
                 }
+                if('cross' == partie.grille[1][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][2]){
+                    $('div#' + [1] + '_' + [0]).children(".forme.cross").css('display','none');
+                    $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [7] + '_' + [2]).children(".forme.cross").css('display','none');
 
+                    $('div#' + [1] + '_' + [0]).children(".forme.crossV").css('display','block');
+                    $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [7] + '_' + [2]).children(".forme.crossV").css('display','block');
+                    partie.joueur_gagnant = 'cross';
+                }
+                if('cross' == partie.grille[2][0] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][2]){
+                    $('div#' + [2] + '_' + [0]).children(".forme.cross").css('display','none');
+                    $('div#' + [5] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [8] + '_' + [2]).children(".forme.cross").css('display','none');
 
+                    $('div#' + [2] + '_' + [0]).children(".forme.crossV").css('display','block');
+                    $('div#' + [5] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [8] + '_' + [2]).children(".forme.crossV").css('display','block');
+                    partie.joueur_gagnant = 'cross';
+                }
+                //--------------------------------------------------------------------------------------
+                if('cross' == partie.grille[0][2] &&  'cross' == partie.grille[3][1] &&  'cross' == partie.grille[6][0]){
+                    $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
+                    $('div#' + [3] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [6] + '_' + [2]).children(".forme.cross").css('display','none');
+
+                    $('div#' + [0] + '_' + [0]).children(".forme.crossV").css('display','block');
+                    $('div#' + [3] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [6] + '_' + [2]).children(".forme.crossV").css('display','block');
+                    partie.joueur_gagnant = 'cross';
+                }
+                if('cross' == partie.grille[1][2] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[7][0]){
+                    $('div#' + [1] + '_' + [2]).children(".forme.cross").css('display','none');
+                    $('div#' + [4] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [7] + '_' + [0]).children(".forme.cross").css('display','none');
+
+                    $('div#' + [1] + '_' + [2]).children(".forme.crossV").css('display','block');
+                    $('div#' + [4] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [7] + '_' + [0]).children(".forme.crossV").css('display','block');
+                    partie.joueur_gagnant = 'cross';
+                }
+                if('cross' == partie.grille[2][2] &&  'cross' == partie.grille[5][1] &&  'cross' == partie.grille[8][0]){
+                    $('div#' + [2] + '_' + [2]).children(".forme.cross").css('display','none');
+                    $('div#' + [5] + '_' + [1]).children(".forme.cross").css('display','none');
+                    $('div#' + [8] + '_' + [0]).children(".forme.cross").css('display','none');
+
+                    $('div#' + [2] + '_' + [2]).children(".forme.crossV").css('display','block');
+                    $('div#' + [5] + '_' + [1]).children(".forme.crossV").css('display','block');
+                    $('div#' + [8] + '_' + [0]).children(".forme.crossV").css('display','block');
+                    partie.joueur_gagnant = 'cross';
+                }
+                //--------------------------------------------------------------------------------------
                 /** Inter Plateau diagonales */
                 if('cross' == partie.grille[0][0] &&  'cross' == partie.grille[4][1] &&  'cross' == partie.grille[8][2]){
                     $('div#' + [0] + '_' + [0]).children(".forme.cross").css('display','none');
